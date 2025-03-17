@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+/* design philosophy is minimal without "smart-ass" code so simple with tricks to stay readable */
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    --colourBG: #000000;
+    --colourSecBG: #191919;
+    --colourText: #AAAAAA;
+    --colourNeonOrange: #FF6F00;
+    --colourNeonBlue: #00AFFE;
+    --colourNeonGreen: #00E676;
+    --colourNeonRed: #E61B00;
+
+    font-family: 'Ubuntu Mono';
+    color: var(--colourText);
+    
+    --fontBig: 22px;
+    --fontMed: 18px;
+    --fontSmall: 16px;
+    --panelGaps: 1dvw;
+    font-size: 16px;
+}
+h1, h2, h3, #popup > ul[data-Title]::before {
+    all: unset;
+    font-family: 'Turret Road';
+    font-size: var(--fontBig);
+    font-weight: 600;
+    color: var(--colourNeonOrange);
+}
+h3 {
+    font-size: var(--fontMed);
+}
+.username {
+    color: var(--colourNeonBlue);
+}
+    .username::before {
+        content: '/';
+    }
+    .username::after {
+        content: '/$/>';
+    }
+
+html {
+    margin: 0;
+}
+body {
+    position: relative;
+    margin: 0;
+    background: var(--colourBG);
+
+    display: grid;
+    grid-template-columns: 72% 1fr;
+    gap: var(--panelGaps);
+    
+    padding: var(--panelGaps);
+}
+body > div { /* hopefully scales, idk i use 1366 x 768 will test later */
+    display: flex;
+    flex-direction: column;
+    gap: var(--panelGaps);
+    
+    /* percentage no work :( */
+    height: calc(100dvh - var(--panelGaps)*2); 
+}
+    body::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+
+        background: linear-gradient(#00000031 50%,#00000000 50%);
+        background-size: 100% 4px;
+        animation: 60s linear reverse infinite;
+        animation-name: CRTscan;
+    }
+
+header { /* Logo, Title & Time essentially*/
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    display: flex;
+}
+    header > img {
+        width: 11%;
+        height: 100%;
+    }
+    header > div {
+        display: flex;
+        flex-direction: column-reverse;
+        width: max-content;
+        padding-bottom: 5px;
+    }
+        header > div > h2 {
+            color: var(--colourText);
+            font-size: var(--fontSmall);
+        }
+            header > div > h2 > span {
+                font-family: 'Turret Road';
+            }
+section {
+    background: var(--colourSecBG);
+    flex: 1;
+}
+
+#prompter {
+    padding-inline: 15px;
+    position: relative;
+    flex: 0 0 auto;
+    height: max-content;
+
+    display: flex;
+    transition: 2s;
+}
+    .indicator {
+        width: 5px;
+        height: 5px;
+
+        background: var(--colourNeonBlue);
+        border-radius: 100%;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+
+        opacity: 0.3;
+        animation: 2s infinite;
+        animation-name: none;
+    }
+    #prompter > .username {
+        padding-block: 15px;
+        min-width: max-content;
+    }
+    #prompter > textarea {
+        all: unset;
+        resize: none; 
+        margin-block: 15px;
+        margin-left: 10px;
+        padding-right: 10px;
+        flex: 1;
+        font-size: 1rem;
+        overflow-wrap: break-word;
+    }
+
+#console {
+    position: relative;
+    display: flex;
+    flex: 1;
+    overflow-y: hidden;
+}
+    #console > .indicator {
+        top: unset;
+        bottom: 5px;
+
+        background: var(--colourNeonOrange);
+    }
+    #console > #settings {
+        width: 25px;
+        aspect-ratio: 1;
+
+        position: absolute;
+        right: 15px;
+        top: 15px;
+
+    }
+    #console > #settings:hover,
+    #popup > .closePopup:hover {
+        filter: grayscale(100%) invert(45%) sepia(46%) saturate(2785%) hue-rotate(1deg) brightness(102%) contrast(106%);
+        transition: 500ms;
+    }
+
+    #console > #transcript {
+        overflow-y: auto;
+        margin: 60px 0 5px 15px;
+        padding-right: 15px;
+        width: 100%;
+    }
+        #console > #transcript > p {
+            display: flex;
+            gap: 10px;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+            #console > #transcript > p > .speaker {
+                min-width: 20%;
+                text-align: right;
+                color: var(--colourNeonOrange);
+            }
+                #console > #transcript > p > .speaker::after{
+                    content: ':';
+                }
+        #console > #transcript > .playerInput {
+            display: flex;
+            justify-content: end;
+            margin-block: 10px 15px;
+        }
+            .playerInput > .playerEntry {
+                text-align: right;
+                max-width: 75%;
+            }
+            .playerInput > .username {
+                direction: rtl;
+            }
+        
+
+#characterInfo {
+    overflow-y: scroll;
+}
+    #characterInfo > div {
+        margin: 5px;
+        margin-bottom: 10px; /* million "better" ways but this is simple */
+    }
+        #characterInfo > div > h2 {
+            display: flex;
+            width: 100%;
+            border-bottom: 1px solid var(--colourNeonOrange);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        #characterInfo > div > h3 {
+            text-transform: uppercase;
+            padding-top: 10px;
+            padding-inline: 5px;
+        }
+        #characterInfo > div > p {
+            margin: 0;
+            padding-inline: 5px;
+            
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+            gap: 10px;
+        }
+            #characterInfo > div > p > span {
+                display: flex;
+                justify-content: space-between;
+                overflow-wrap: anywhere;
+            }
+            span.Q {
+                text-transform: uppercase;
+            }
+            span.A {
+                color: var(--colourNeonBlue);
+                text-align: right;
+            }
+
+        #characterInfo > div > ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0 5px;
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 10px;
+        }
+            #characterInfo > div > ul > li {
+                display: flex;
+                justify-content: space-between;
+                min-width: max-content;
+            }
+            #characterInfo > div > ul.ib_list > li:not(:last-child)::after {
+                content: ',';
+            }
+            #characterInfo > div > ul.ib_list > li:last-child::after {
+                content: '.';
+            }
+            #characterInfo > div > ul.g_list > li {
+                flex: 1 1 45%;
+            }
+
+            .positive, .negative {
+                text-transform: uppercase;
+            }
+            .positive > * {
+                color: var(--colourNeonGreen);
+            }
+            .negative > * {
+                color: var(--colourNeonRed);
+            }
+
+#portraits {
+    /* min-height: 30dvh; */
+    max-height: 30dvh;
+    padding: 5px;
+    padding-bottom: 0;
+    
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+    #portraits > h2 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1px;
+
+        background: no-repeat linear-gradient(to right, var(--colourNeonBlue), var(--colourNeonOrange));
+        background-size: 100% 1px;
+        background-position-y: 100%;
+    }
+        #portraits > h2 > span {
+            font-family: 'Turret Road';
+            font-size: var(--fontBig);
+            font-weight: 600;
+            color: var(--colourNeonBlue);
+        }
+        #portraits > h2 > span:nth-child(2) {
+            color: var(--colourNeonOrange);
+        }
+            #portraits > .portraitGallery {
+                display: grid;
+                width: 100%;
+                height: 100%;
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
+                #portraits > .portraitGallery > * {
+                    position: relative;
+                    overflow: hidden;
+                    cursor: none;
+                }
+                #portraits > .portraitGallery > *:nth-child(1) {
+                    grid-column: 1 / span 2;
+                    grid-row: 1/ span 2;
+                }
+                    #portraits > .portraitGallery > * > img {
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        
+                        object-fit: contain;
+                        inset: 0;
+                        margin: auto;
+                    } 
+                    #portraits > .portraitGallery > * > p {
+                        display: none; 
+                        position: fixed;
+                        flex-direction: column;
+                        outline: 1px solid var(--colourNeonOrange);
+                        background-color: #00000080;
+                        padding: 3px;
+                        margin: 0;
+                        z-index: 10;
+                    }
+                    #portraits > .portraitGallery > *:nth-child(1) > p {
+                        outline: 1px solid var(--colourNeonBlue);
+                    }
+                    #portraits > .portraitGallery > *:hover > p {
+                        display: flex;
+                        transition: 500ms ease-out;
+                    }
+                        #portraits > .portraitGallery > * > p > span {
+                            font-size: var(--fontSmall);
+                            color: var(--colourNeonBlue);
+                            text-align: right;
+                        }
+                            #portraits > .portraitGallery > * > p > .allyLoyalty::before {
+                                color: var(--colourText);
+                                content: 'Loyalty:';
+                                padding-right: 10px;  
+                            }
+                            #portraits > .portraitGallery > * > p > .allyConn::before {
+                                color: var(--colourText);
+                                content: 'Connect:';
+                                padding-right: 10px;  
+                            }
+                        #portraits > .portraitGallery > * > p > .allyName {
+                            font-size: var(--fontSmall);
+                            color: var(--colourNeonOrange);
+                        }
+                        #portraits > .portraitGallery > * > p > .characterName {
+                            font-size: var(--fontMed);
+                        }
+                        
+                        
+                #portraits > .portraitGallery > *::before {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    
+                    position: absolute;
+                    /* background: none;
+                    background-size: 100% 100%;
+                    
+                    filter: blur(10px); done in js now */
+                }
+                #portraits > .portraitGallery > *::after {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+
+                    position: absolute;
+                    z-index: 2;
+                    box-shadow: inset 0 0 10px 10px #19191980;
+                }
+                #portraits > .portraitGallery > *:hover,
+                #portraits > .portraitGallery > *:focus {
+                    margin: 1px;
+                    border: 1px solid #00000000;
+                    outline: 1px solid var(--colourNeonOrange);
+                }
+                    #portraits > .portraitGallery > *:hover::after,
+                    portraits > .portraitGallery > *:focus::after {
+                        box-shadow: none;
+                        box-shadow: inset 0 0 10px 3px #FF6F0080; 
+                    }
+                #portraits > .portraitGallery > *:nth-child(1):hover,
+                #portraits > .portraitGallery > *:nth-child(1):focus {
+                    outline: 1px solid var(--colourNeonBlue);
+                }
+                    #portraits > .portraitGallery > *:nth-child(1):hover::after,
+                    #portraits > .portraitGallery > *:nth-child(1):focus::after {
+                        box-shadow: none;
+                        box-shadow: inset 0 0 10px 3px #00AFFE80;
+                    }
+                
+#popup {
+    --popupWindow: 35px;
+
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    background: var(--colourSecBG);
+    min-width: 400px;
+    min-height: 150px;
+    width: max-content;
+    height: max-content;
+
+    padding: var(--popupWindow) 20px 10px 10px;
+    border: 2px solid black;
+
+    box-shadow: inset 0 var(--popupWindow) black;
+
+    display: none;
+}
+    #popup > .closePopup {
+        --popupSize: 16px;
+        width: var(--popupSize);
+        aspect-ratio: 1;
+        position: absolute;
+        right: calc(var(--popupSize)/2);
+        top: calc(var(--popupWindow)/2 - var(--popupSize)/2);
+    }  
+    #popup > ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+        #popup > ul[data-Title]::before {
+            content: attr(data-Title);
+            position: absolute;
+            top: 5px;
+            left: 10px;
+        }
+        #popup > ul > li {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            padding-block: 10px 3px ;
+            border-bottom: 1px solid var(--colourText);
+        }
+            #popup > ul > li > * {
+                background: none;
+                border: 1px solid var(--colourSecBG) ;
+                outline: 1px solid var(--colourText);
+                border-radius: 5px;
+                margin: 0;
+                padding: 2px 5px;
+                width: 200px;
+                min-height: 16px;
+            }
+            #popup > ul > li  > *:hover,
+            #popup > ul > li  > *:focus,
+            #popup > ul > li  > *:active{
+                color: var(--colourNeonOrange);
+                border: 1px solid var(--colourNeonOrange);
+                outline: 1px solid var(--colourSecBG);
+                box-shadow: 0 0 10px 3px var(--colourNeonOrange);
+            }
+                #popup > ul > li  > select > option {
+                    background-color: var(--colourSecBG);
+                }
+            #popup > ul > li > textarea {
+                resize: none;
+            }
+
+
+
+@keyframes blink {
+    0%, 100% {
+         opacity: 1; 
+    }
+    50% { opacity: 0.3; }
+}
+@keyframes CRTscan {
+    from { background-position: 0; }
+    to { background-position-y: 2px; }
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    padding-right: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+#characterInfo::-webkit-scrollbar-track {
+    margin: 5px;
+}
+
+::-webkit-scrollbar-thumb { 
+    background: linear-gradient(to right, var(--colourNeonOrange) 60%, #ff000000 60%);
+}

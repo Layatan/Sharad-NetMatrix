@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-title" content="Sharad" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="data/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="data/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="data/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="data/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="data/favicons/site.webmanifest" />
+
+    <script src="index.js" defer></script>
+      
+    <title>Sharad-Matrix</title>
+  </head>
+  <body>
+    <header>
+        <img src="./data/SRLogo.png" alt="Shadowrun Logo">
+        <div>
+            <h1 id="title">SHADOWRUN ADVENTURE</h1>
+            <h2 id="time"><span id="hour">13</span> : <span id="minute">25</span> : <span id="second">46</span></h2>
+        </div>
+    </header>
+    <div class="leftSide">
+        <section id="console">
+          <div class="indicator" aria-hidden="true"></div>
+          <img id="settings" src="data/settings.png" alt="" onclick="togglePopup()">
+          <div id="transcript">
+            <p><span class="speaker">Game Master</span class="dialogue">You reach the spot where you initially entered, and just as you’re about to slip through, you hear a voice call out from behind.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p class="playerInput"><span class="playerEntry">I quickly throw a knife at him as a distraction so i can close in on them before any loud noises erupt.</span><span class="username"></span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+
+          </div>
+        </section>
+        <section id="prompter">
+            <span class="username"></span>
+            <textarea id="prompt" name="promptBox" rows="1" cols="103" placeholder="prompt here..."></textarea>
+            
+            <div class="indicator" aria-hidden="true"></div>
+        </section>
+    </div>
+    <div class="rightSide">
+        <section id="characterInfo">
+          
+          <div>
+            <!-- H2 IS HEADING | H3 I SUBHEADING | P IS LINE | SPAN IS AN ENTRY | (SUB)SPAN DOES "FORMS" | UL DOES NON q&a "FORMS" -->
+            <h2>CHARACTER</h2>
+            <p> 
+              <span> <!-- ok this is plain disgusting, necessary cuz it needs to be a grid (for even spacing) with flex kids that hug edges but still... doesnt feel right span-ing withing spans -->
+                <span class="Q">Name:</span> <span class="A">First Names "Alias" Lastname</span>
+              </span>
+            </p>
+            <p>
+              <span>
+                <span class="Q">Arch:</span> <span class="A">Primary / Secondary</span>
+              </span>
+            </p>
+            <br>
+            <p>
+              <span>
+                <span class="Q">Meta:</span><span class="A">Human</span>
+              </span>
+              <span>
+                <span class="Q">Sex:</span><span class="A">F</span>
+              </span>
+              <span>
+                <span class="Q">Age:</span><span class="A">21</span>
+              </span>
+            </p>
+          </div>
+
+          <div>
+            <h2>Inventory</h2>
+            <ul class="inv ib_list">
+              <li>Sword (<span class="A">x1</span>)</li>
+              <li>PISTOL (<span class="A">x1</span>)</li>
+              <li>NUKE (<span class="A">x1</span>)</li>
+              <li>IDK (<span class="A">x1</span>)</li>
+              <li>STUFF (<span class="A">x1</span>)</li>
+              <li>BROWHOCARES (<span class="A">x999</span>) </li>
+            </ul>
+            <br>
+            <h3>Resources</h3>
+            <p>
+              <span>
+                <span class="Q">Lifestyle:</span><span class="A">Squatter</span>
+              </span>
+              <span>
+                <span class="Q">Nuyen:</span><span class="A">9,999,999</span>
+              </span>
+            </p>
+            <p>
+              <span>
+                <span class="Q">Karma Total:</span><span class="A">999</span>
+              </span>
+              <span>
+                <span class="Q">Karma:</span><span class="A">999</span>
+              </span>
+            </p>
+          </div>
+
+          <div>
+            <h2>ATTRIBUTES</h2>
+            <p>
+              <span>
+                <span class="Q">BOD:</span><span class="A">00</span>
+              </span>
+              <span>
+                <span class="Q">AGI:</span><span class="A">00</span>
+              </span>
+              <span>
+                <span class="Q">REA:</span><span class="A">00</span>
+              </span>
+              <span>
+                <span class="Q">STR:</span><span class="A">00</span>
+              </span>
+            </p>
+            <p>
+              <span>
+                <span class="Q">WIL:</span><span class="A">00</span>
+              </span>
+              <span>
+                <span class="Q">LOG:</span><span class="A">00</span>
+              </span>
+              <span>
+                <span class="Q">INT:</span><span class="A">00</span>
+              </span>
+              <span>
+                <span class="Q">CHA:</span><span class="A">00</span>
+              </span>
+            </p>
+            <p>
+              <span>
+                <span class="Q">MAG:</span><span class="A">00</span>
+              </span>
+              <span>
+                <span class="Q">RES:</span><span class="A">00</span>
+              </span>
+              <span>
+                <span class="Q">ESS:</span><span class="A">00</span>
+              </span>
+              <span>
+                <span class="Q">EDG:</span><span class="A">00</span>
+              </span>
+            </p>
+            <br>
+            <p>
+              <span>
+                <span class="Q">INIT:</span><span class="A">00</span>
+              </span>
+              <span>
+                <span class="Q">MAT-INIT:</span><span class="A">00</span>
+              </span>
+              <span>
+                <span class="Q">AST-INIT:</span><span class="A">00</span>
+              </span>
+            </p>
+            <br>
+            <h3>Limits</h3>
+            <p>
+              <span>
+                <span class="Q">Physical:</span><span class="A">0+0d6</span>
+              </span>
+              <span>
+                <span class="Q">Mental:</span><span class="A">0+0d6</span>
+              </span>
+            </p>
+            <p>
+              <span>
+                <span class="Q">Social:</span><span class="A">0+0d6</span>
+              </span>
+              <span>
+                <span class="Q">Astral:</span><span class="A">0+0d6</span>
+              </span>
+            </p>
+          </div>
+
+          <div>
+            <h2>SKILLS</h2>
+            <ul class="physical skills g_list">
+              <li>
+                <span class="Q">physical!skill1:</span><span class="A">00</span>
+              </li>
+              <li>
+                <span class="Q">physical!skill1:</span><span class="A">00</span>
+              </li>
+              <li>
+                <span class="Q">physical!skill1:</span><span class="A">00</span>
+              </li>
+              <li>
+                <span class="Q">physical!skill1:</span><span class="A">00</span>
+              </li>
+              <li>
+                <span class="Q">physical!skill1:</span><span class="A">00</span>
+              </li>
+            </ul>
+            <br>
+            <ul class="mental skills g_list">
+              <li>
+                <span class="Q">mental!skill1:</span><span class="A">00</span>
+              </li>
+              <li>
+                <span class="Q">mental!skill1:</span><span class="A">00</span>
+              </li>
+              <li>
+                <span class="Q">mental!skill1:</span><span class="A">00</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2>QUALITIES</h2>
+            <ul class="positive ib_list">
+              <li>Ambidextrous</li>
+              <li>Bilingual</li> 
+              <li>First Impression</li>
+              <li>Lucky</li>
+            </ul>
+            <br>
+            <ul class="negative ib_list">
+              <li>Addiction</li>
+              <li>Prejudiced</li>
+              <li>Ork Poser</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2>SKILLS</h2>
+            <ul class="cyberware g_list">
+              <li>
+                <span class="Q">Cyberware(c):</span><span class="A">00</span>
+              </li>
+              <li>
+                <span class="Q">Cyberware(c):</span><span class="A">00</span>
+              </li>
+              <li>
+                <span class="Q">Bioware(b):</span><span class="A">00</span>
+              </li>
+              <li>
+                <span class="Q">Cyberware(c):</span><span class="A">00</span>
+              </li>
+              <li>
+                <span class="Q">Bioware(b):</span><span class="A">00</span>
+              </li>
+            </ul>
+          </div>
+
+        </section>
+        <section id="portraits">
+          <h2><span>ALIAS</span><span>AFFILIATES</span></h2>
+          <div class="portraitGallery">
+            <div>
+              <img src="data/Relic Rhyzer.jpg" alt="">
+              <p><span class="characterName">Alias</span></p>
+            </div>
+            <div>
+              <img src="data/DALL·E 2025-02-24 17.20.32 - A cyberpunk-style portrait of a young Black African woman with visible cybernetic augmentations along the edges of her jaw and face. Her hairstyle fea.webp" alt="">
+              <p><span class="allyName">Ally's pseudo</span><span class="allyLoyalty">4</span><span class="allyConn">6</span></p>
+            </div>
+            <div>
+              <img src="data/Npc_humanmale_paco.webp" alt="">
+              <p><span class="allyName">Ally's pseudo</span><span class="allyLoyalty">4</span><span class="allyConn">6</span></p>
+            </div>
+            <div>
+              <img src="data/Pc_dwarffemale_04a_visseral.webp" alt="">
+              <p><span class="allyName">Ally's pseudo</span><span class="allyLoyalty">4</span><span class="allyConn">6</span></p>
+            </div>
+            <div>
+              <img src="data/Pc_dwarffemale_04a_visseral.webp" alt="">
+              <p><span class="allyName">Ally's pseudo</span><span class="allyLoyalty">4</span><span class="allyConn">6</span></p>
+            </div>
+            <!-- <div></div> -->
+          </div>
+        </section>
+    </div>
+    <div id="popup"><img class="closePopup" src="data/close.png" onclick="togglePopup()">
+      <ul #id="popup_settings" data-Title="Settings">
+        <li>Username<textarea id="uname" rows="1" cols="1" maxlength="20" placeholder="username"></textarea></li>
+        <li>LLM <select name="settings1" id="settings1">
+          <option value="volvo">Deepseek R1</option>
+          <option value="saab">llama 3.2</option>
+          <option value="opel">ChatGPT (!api!)</option>
+          <option value="audi">Deepseek R1 (!api!)</option>
+        </select></li>
+      </ul>
+    </div>
+  </body>
+</html>
