@@ -20,10 +20,19 @@ textBox.addEventListener('blur', function () { //pomptBox deselected
         indicators[1].style.setProperty("opacity", "0.3");
     } 
     else {
-        const lineHeight = parseFloat(window.getComputedStyle(textBox).fontSize);
-        const scrollHeight = textBox.scrollHeight;
+        
+        if (textBox.scrollHeight > textBox.clientHeight) {
+            textBox.setAttribute("rows", "6");
+        }
+        else {
+            let rowCount = 0;
 
-        textBox.setAttribute("rows", Math.min(Math.floor(scrollHeight / lineHeight), 6));
+            do {
+                textBox.setAttribute("rows", (++rowCount).toString());
+                if (rowCount == 6) break;
+            } while (textBox.clientHeight != textBox.scrollHeight)
+        }
+
         indicators[1].style.setProperty("opacity", "1"); 
     }
 });
@@ -31,6 +40,7 @@ textBox.addEventListener('blur', function () { //pomptBox deselected
 textBox.addEventListener('keydown', function(event) { 
     if (event.ctrlKey && event.key === 'Enter') { //xss yourself for all i care
         console.log('Control + Enter was pressed!');
+        textBox.blur();
 
         const newDiv = document.createElement("div");
         const newImg = document.createElement("img");
@@ -111,6 +121,10 @@ unameTextBox.value = localStorage.getItem("Username") || "username";
 const unameInstances = document.getElementsByClassName("username");
 Array.from(unameInstances).forEach(element => {
     element.innerText = unameTextBox.value; // Replace 'New Text' with the desired value
+    element.addEventListener('dblclick', () => {
+        togglePopup();
+        unameTextBox.focus();
+    });
 });
 unameTextBox.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
@@ -122,6 +136,8 @@ unameTextBox.addEventListener("keypress", function (event) {
         }
     }
 });
+
+
 
 const currHour = document.getElementById('hour');
 const currMin = document.getElementById('minute');
