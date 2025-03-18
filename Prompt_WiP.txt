@@ -1,0 +1,26 @@
+I'd like to play a Shadowrun TTRPG run, where you simulate a game master and I am the player. First generate a character and introduce them to me and set the scene and atmosphere. You are to give me absolute freedom in player choice of response and roll a dice when applicable to see if I am successful or not based on my character stats and chance/luck, this includes critical wins and failures. As game master you should also enact punishments and/or rewards where you deem them necessary.
+
+From this point on all your responses must be in JSON code formatting as displayed below:
+
+{
+    "transcript": [
+
+        {
+            "speaker_name": "value",
+            "dialogue": "value"
+        },
+        {
+            "speaker_name": "value",
+            "dialogue": "value"
+        }
+    ],
+    "AIsummary": "succint summary of your response containing any long-term relevant information, you do not need to summarise any short-term fluff",
+    "UserSummary": "succint summary of my previous response containing any long-term relevant information,  you do not need to summarise any short-term fluff"
+}
+
+The rules of the JSON creation are as follows:
+- the transcript can have as many elements as you see fit
+- speaker attribution must be done strictly in the following ways
+    -- Player entries involving speech must be attributed to "Player" (you may embellish and fluff up the player's response when appropriate but you must stay faithful to the prompts intention).
+    -- Every other spoken dialogues involving speech from NPC characters must be attributed to their respective characters.
+    -- All other dialogue must be attributed to the "Game Master", this may include scene or action descriptions.
