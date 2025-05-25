@@ -11,13 +11,14 @@
     <link rel="apple-touch-icon" sizes="180x180" href="data/favicons/apple-touch-icon.png" />
     <link rel="manifest" href="data/favicons/site.webmanifest" />
 
-    <script src="index.js" defer></script>
+    <script src="styleHelper.js" defer></script>
+    <script src="engine.js" defer></script> <!-- keep below style helper -->
       
     <title>Sharad-Matrix</title>
   </head>
   <body>
     <header>
-        <img src="./data/SRLogo.png" alt="Shadowrun Logo">
+        <img src="data/SRLogo.png" alt="Shadowrun Logo">
         <div>
             <h1 id="title">SHADOWRUN ADVENTURE</h1>
             <h2 id="time"><span id="hour">13</span> : <span id="minute">25</span> : <span id="second">46</span></h2>
@@ -31,17 +32,13 @@
             <p><span class="speaker">Game Master</span class="dialogue">You reach the spot where you initially entered, and just as you’re about to slip through, you hear a voice call out from behind.</span></p>
             <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
             <p class="playerInput"><span class="playerEntry">I quickly throw a knife at him as a distraction so i can close in on them before any loud noises erupt.</span><span class="username"></span></p>
-            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
-            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
-            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
-            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
-            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
-            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
-            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
-            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
-            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
-            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
-            <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span> <span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span> <span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span> <span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span> <span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">Abraham 'Ace' Bah</span> <span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
+            <p><span class="speaker">speaker</span> <span class="dialogue">dialogue</span></p>
+            <p class="playerInput"><span class="playerEntry">dialogue</span><span class="username"></span></p>
 
           </div>
         </section>
@@ -49,6 +46,7 @@
             <span class="username"></span>
             <textarea id="prompt" name="promptBox" rows="1" cols="103" placeholder="prompt here..."></textarea>
             
+            <img id="send" title="Ctrl+Enter" src="data/send.png" alt="Send Icon" onclick="addChatEntry(true)">
             <div class="indicator" aria-hidden="true"></div>
         </section>
     </div>

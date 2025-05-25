@@ -1,14 +1,16 @@
 const textBox = document.getElementById("prompt");
 const indicators = document.getElementsByClassName("indicator");
+const sendButton = document.getElementById("send");
 const portraitGallery = document.getElementsByClassName("portraitGallery")[0];
 
 let styleSheet = document.styleSheets[0];
+let entryAllowed = false;
 
-console.log("JS loaded!");
+console.log("!style helper loaded!")
 
 textBox.addEventListener("focus", function () { //pomptBox active
     indicators[1].style.setProperty("animation-name", "blink");
-    textBox.setAttribute("rows", "6")
+    textBox.setAttribute("rows", "6");
 });
 
 textBox.addEventListener('blur', function () { //pomptBox deselected
@@ -18,6 +20,7 @@ textBox.addEventListener('blur', function () { //pomptBox deselected
     if (textBox.value === "") {
         textBox.setAttribute("rows", "1");
         indicators[1].style.setProperty("opacity", "0.3");
+        sendButton.removeAttribute("class", "filterBlue");
     } 
     else {
         
@@ -33,26 +36,25 @@ textBox.addEventListener('blur', function () { //pomptBox deselected
             } while (textBox.clientHeight != textBox.scrollHeight)
         }
 
-        indicators[1].style.setProperty("opacity", "1"); 
+        indicators[1].style.setProperty("opacity", "1");
+        checkEntryAllowed();
     }
 });
 
-textBox.addEventListener('keydown', function(event) { 
-    if (event.ctrlKey && event.key === 'Enter') { //xss yourself for all i care
-        console.log('Control + Enter was pressed!');
-        textBox.blur();
-
-        const newDiv = document.createElement("div");
-        const newImg = document.createElement("img");
-        
-        newImg.setAttribute("src", "data/unknown.jpg");
-        newDiv.appendChild(newImg);
-
-        // Append the new div to the parent element
-        portraitGallery.appendChild(newDiv);
-        updateGallery();
-    }
+textBox.addEventListener("input", () => {
+    checkEntryAllowed();
 });
+
+function checkEntryAllowed() {
+    if (textBox.value.trim() !== "" && textBox.value.trim().length >= 3){
+        sendButton.setAttribute("class", "filterBlue");
+        entryAllowed = true;
+    }
+    else {
+        sendButton.removeAttribute("class", "filterBlue");
+        entryAllowed = false;
+    }
+}
 
 
 // Function to manage a dedicated CSS stylesheet

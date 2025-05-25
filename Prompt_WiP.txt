@@ -21,6 +21,6 @@ From this point on all your responses must be in JSON code formatting as display
 The rules of the JSON creation are as follows:
 - the transcript can have as many elements as you see fit
 - speaker attribution must be done strictly in the following ways
-    -- Player entries involving speech must be attributed to "Player" (you may embellish and fluff up the player's response when appropriate but you must stay faithful to the prompts intention).
+    -- Player entries involving speech must be attributed to "Player" (you may embellish and fluff up the player's response but you must stay faithful to the prompts "intentions").
     -- Every other spoken dialogues involving speech from NPC characters must be attributed to their respective characters.
     -- All other dialogue must be attributed to the "Game Master", this may include scene or action descriptions.

@@ -114,7 +114,7 @@ section {
 }
 
 #prompter {
-    padding-inline: 15px;
+    padding-inline: 15px 5px;
     position: relative;
     flex: 0 0 auto;
     height: max-content;
@@ -144,11 +144,26 @@ section {
         resize: none; 
         margin-block: 15px;
         margin-left: 10px;
-        padding-right: 10px;
+        margin-right: 5px;
         flex: 1;
         font-size: 1rem;
         overflow-wrap: break-word;
     }
+    #prompter > #send {
+        height: 25px;
+        width: auto;
+        margin-block: auto;
+        padding: 5px;
+        border-radius: 5px 25px 25px 5px;
+
+    }
+        .filterBlue {
+            filter: brightness(0) invert(60%) sepia(30%) saturate(6099%) hue-rotate(161deg) brightness(107%) contrast(104%);
+        }
+        #prompter > #send:hover {
+            background: #00000050;
+            transition: 500ms;
+        }
 
 #console {
     position: relative;
@@ -173,7 +188,7 @@ section {
     }
     #console > #settings:hover,
     #popup > .closePopup:hover {
-        filter: grayscale(100%) invert(45%) sepia(46%) saturate(2785%) hue-rotate(1deg) brightness(102%) contrast(106%);
+        filter: brightness(0) invert(45%) sepia(46%) saturate(2785%) hue-rotate(1deg) brightness(102%) contrast(106%);
         transition: 500ms;
     }
 
@@ -532,9 +547,8 @@ section {
         --fontMed: 18px;
         --fontSmall: 16px;
         --panelGaps: 1dvw;
-
-        #console > #settings {
-            width: 25px;
-        }
+    }
+    #console > #settings {
+        width: 25px;
     }
 }
