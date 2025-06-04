@@ -1,3 +1,5 @@
+console.log("!style helper loaded!");
+
 const textBox = document.getElementById("prompt");
 const tbIndicator = document.getElementsByClassName("indicator")[1];
 const sendButton = document.getElementById("send");
@@ -6,7 +8,6 @@ const portraitGallery = document.getElementsByClassName("portraitGallery")[0];
 let styleSheet = document.styleSheets[0];
 let entryAllowed = false;
 
-console.log("!style helper loaded!")
 
 textBox.addEventListener("focus", function () { //pomptBox active
     tbIndicator.style.setProperty("animation-name", "blink");
@@ -14,7 +15,6 @@ textBox.addEventListener("focus", function () { //pomptBox active
 });
 
 textBox.addEventListener('blur', function () { //pomptBox deselected
-    checkEntry();
     if (sendButton.matches(":hover") == true) {
         addChatEntry(true);
         tbIndicator.style.setProperty("opacity", "0.3");
@@ -52,9 +52,9 @@ textBox.addEventListener("input", () => {
 
 function checkEntry() {
     //textBox.value = textBox.value.replace(/[^\x00-\x7F]/g, ""); // stolen regex - https://www.geeksforgeeks.org/how-to-remove-all-non-ascii-characters-from-the-string-using-javascript/
-    textBox.value = textBox.value.trim();
+    // textBox.value = textBox.value.trim();
 
-    if (textBox.value.length >= 3){
+    if (textBox.value.length.trim() >= 3){
         sendButton.setAttribute("class", "filterBlue");
         entryAllowed = true;
     }
