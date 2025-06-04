@@ -12,11 +12,9 @@ textBox.addEventListener('keydown', function(event) {
 });
 
 function addChatEntry(isPlayerEntry) {
-    
+    checkEntry(); //as a last def measure
     const newChatEntry = document.createElement("p");
     
-    console.log(entryAllowed);
-    console.log(isPlayerEntry);
     if (entryAllowed == true && isPlayerEntry == true) { // if player entry
         const playerEntry = document.createElement("span");
         const username = document.createElement("span");
@@ -47,7 +45,11 @@ function addChatEntry(isPlayerEntry) {
     }
 }
 
-// -- Add an Image of an UNKN --- 
+function ollamaConversate(params) {
+    
+}
+
+// // -- Add an Image of an UNKN --- 
 // const newDiv = document.createElement("div");
 // const newImg = document.createElement("img");
 // const charAttr = document.createElement("p");
@@ -73,3 +75,4 @@ function addChatEntry(isPlayerEntry) {
 // // Append the new div to the parent element
 // portraitGallery.appendChild(newDiv);
 // updateGallery();
+// // -- end snippet --

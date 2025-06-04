@@ -1,5 +1,5 @@
 const textBox = document.getElementById("prompt");
-const indicators = document.getElementsByClassName("indicator");
+const tbIndicator = document.getElementsByClassName("indicator")[1];
 const sendButton = document.getElementById("send");
 const portraitGallery = document.getElementsByClassName("portraitGallery")[0];
 
@@ -9,17 +9,22 @@ let entryAllowed = false;
 console.log("!style helper loaded!")
 
 textBox.addEventListener("focus", function () { //pomptBox active
-    indicators[1].style.setProperty("animation-name", "blink");
+    tbIndicator.style.setProperty("animation-name", "blink");
     textBox.setAttribute("rows", "6");
 });
 
 textBox.addEventListener('blur', function () { //pomptBox deselected
-    indicators[1].style.setProperty("animation-name", "none");
-    textBox.value = textBox.value.trim();
+    checkEntry();
+    if (sendButton.matches(":hover") == true) {
+        addChatEntry(true);
+        tbIndicator.style.setProperty("opacity", "0.3");
+    }
+
+    tbIndicator.style.setProperty("animation-name", "none");
     
     if (textBox.value === "") {
         textBox.setAttribute("rows", "1");
-        indicators[1].style.setProperty("opacity", "0.3");
+        tbIndicator.style.setProperty("opacity", "0.3");
         sendButton.removeAttribute("class", "filterBlue");
     } 
     else {
@@ -36,17 +41,20 @@ textBox.addEventListener('blur', function () { //pomptBox deselected
             } while (textBox.clientHeight != textBox.scrollHeight)
         }
 
-        indicators[1].style.setProperty("opacity", "1");
-        checkEntryAllowed();
+        tbIndicator.style.setProperty("opacity", "1");
     }
+
 });
 
 textBox.addEventListener("input", () => {
-    checkEntryAllowed();
+    checkEntry();
 });
 
-function checkEntryAllowed() {
-    if (textBox.value.trim() !== "" && textBox.value.trim().length >= 3){
+function checkEntry() {
+    //textBox.value = textBox.value.replace(/[^\x00-\x7F]/g, ""); // stolen regex - https://www.geeksforgeeks.org/how-to-remove-all-non-ascii-characters-from-the-string-using-javascript/
+    textBox.value = textBox.value.trim();
+
+    if (textBox.value.length >= 3){
         sendButton.setAttribute("class", "filterBlue");
         entryAllowed = true;
     }
@@ -57,8 +65,8 @@ function checkEntryAllowed() {
 }
 
 
-// Function to manage a dedicated CSS stylesheet
-function updateGallery(cssRules) {
+
+function updateGallery(cssRules) { // Function to make/manage a dedicated CSS stylesheet - styles portrait backgrounds (w/ override functionality)
     // Check if the dedicated stylesheet already exists
     let dynamicStyleSheet = document.getElementById("portraitBGblurImages");
   

@@ -1,0 +1,122 @@
+{
+    "saveName": "save name",
+    "character": {
+        "name": "First Names \"Alias\" Lastname",
+        "archetype": "Decker / Infiltrator",
+        "meta": "Human",
+        "sex": "F",
+        "age": "21"
+    },
+    "inventory": [
+        {
+            "item": "sword",
+            "quantity": 1
+        },
+        {
+            "item": "pistol",
+            "quantity": 2
+        },
+        {
+            "item": "idknuke",
+            "quantity": 1
+        }
+    ],
+    "resources": {
+        "lifestyle": "squatter",
+        "nuyen": 3000,
+        "karmaTotal": 999,
+        "karmaCurrent": 5
+    },
+    "attributes": {
+        "body": 0,
+        "agility": 0,
+        "reaction": 0,
+        "strength": 0,
+        "willpower": 0,
+        "logic": 0,
+        "intuition": 0,
+        "charisma": 0,
+        "magic": 0,
+        "resonance": 0,
+        "essense": 0,
+        "edge": 0,
+        "initiative": 0,
+        "matrixInitiative": 0,
+        "astralInitiative": 0
+    },
+    "limits": {
+        "physical": 0,
+        "mental": 0,
+        "social": 0,
+        "astral": 0
+    },
+    "skills": [
+        {
+            "item": "physical skill 1",
+            "quantity": 1
+        },
+        {
+            "item": "physical skill 2",
+            "quantity": 1
+        },
+        {
+            "item": "mental skill 1",
+            "quantity": 1
+        }
+    ],
+    "qualitiesPositive": [
+        "qual1",
+        "qual2"
+    ],
+    "qualitiesNegative": [
+        "qual1",
+        "qual2"
+    ],
+    "augmentations": [
+        {
+            "item": "cyberware 1",
+            "cyberNotBio": true,
+            "quantity": 1
+        },
+        {
+            "item": "cyberware 2",
+            "cyberNotBio": true,
+            "quantity": 1
+        },
+        {
+            "item": "bioware 1",
+            "cyberNotBio": true,
+            "quantity": 1
+        }
+    ],
+    "gameHistory": [
+        {
+            "transcript": [
+                {
+                    "speaker_name": "value",
+                    "dialogue": "value"
+                },
+                {
+                    "speaker_name": "value",
+                    "dialogue": "value"
+                }
+            ],
+            "AIsummary": "succint summary of your response containing any long-term relevant information, you do not need to summarise any short-term fluff",
+            "UserSummary": "succint summary of my previous response containing any long-term relevant information,  you do not need to summarise any short-term fluff"
+        },
+        {
+            "transcript": [
+                {
+                    "speaker_name": "value",
+                    "dialogue": "value"
+                },
+                {
+                    "speaker_name": "value",
+                    "dialogue": "value"
+                }
+            ],
+            "AIsummary": "succint summary of your response containing any long-term relevant information, you do not need to summarise any short-term fluff",
+            "UserSummary": "succint summary of my previous response containing any long-term relevant information,  you do not need to summarise any short-term fluff"
+        }
+    ]
+}
