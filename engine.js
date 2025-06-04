@@ -12,7 +12,6 @@ textBox.addEventListener('keydown', function(event) {
 });
 
 function addChatEntry(isPlayerEntry) {
-    checkEntry(); //as a last def measure
     const newChatEntry = document.createElement("p");
     
     if (entryAllowed == true && isPlayerEntry == true) { // if player entry
@@ -32,6 +31,8 @@ function addChatEntry(isPlayerEntry) {
         transcript.appendChild(newChatEntry);
 
         textBox.value = "";
+        unameDBLCupdate();
+        checkEntry();
         return
     } 
     else {

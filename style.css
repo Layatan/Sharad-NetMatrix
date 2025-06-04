@@ -375,7 +375,6 @@ section {
                     }
                     #portraits > .portraitGallery > *:hover > p {
                         display: flex;
-                        transition: 500ms ease-out;
                     }
                         #portraits > .portraitGallery > * > p > span {
                             font-size: var(--fontSmall);
@@ -389,7 +388,7 @@ section {
                             }
                             #portraits > .portraitGallery > * > p > .allyConn::before {
                                 color: var(--colourText);
-                                content: 'Connect:';
+                                content: 'Conn:';
                                 padding-right: 10px;  
                             }
                         #portraits > .portraitGallery > * > p > .allyName {
