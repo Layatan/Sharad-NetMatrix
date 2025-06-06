@@ -27,6 +27,32 @@
         "karmaTotal": 999,
         "karmaCurrent": 5
     },
+    "magic":[
+        {
+            "item": "Fire Bolt",
+            "level": "1"
+        },
+        {
+            "item": "Lightning Bolt",
+            "level": "3"
+        },
+        {
+            "item": "Caustic Splash",
+            "level": "2"
+        },
+        {
+            "item": "Infernus Spirit",
+            "level": "6"
+        },
+        {
+            "item": "City Spirit",
+            "level": "3"
+        },
+        {
+            "item": "Stun Punch",
+            "level": "2"
+        }
+    ],
     "attributes": {
         "body": 0,
         "agility": 0,
@@ -76,17 +102,17 @@
         {
             "item": "cyberware 1",
             "cyberNotBio": true,
-            "quantity": 1
+            "level": 1
         },
         {
             "item": "cyberware 2",
             "cyberNotBio": true,
-            "quantity": 1
+            "level": 1
         },
         {
             "item": "bioware 1",
             "cyberNotBio": true,
-            "quantity": 1
+            "level": 1
         }
     ],
     "gameHistory": [
