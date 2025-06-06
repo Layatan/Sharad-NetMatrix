@@ -1,3 +1,5 @@
+console.log("!style helper loaded!");
+
 const textBox = document.getElementById("prompt");
 const tbIndicator = document.getElementsByClassName("indicator")[1];
 const sendButton = document.getElementById("send");
@@ -6,7 +8,6 @@ const portraitGallery = document.getElementsByClassName("portraitGallery")[0];
 let styleSheet = document.styleSheets[0];
 let entryAllowed = false;
 
-console.log("!style helper loaded!")
 
 textBox.addEventListener("focus", function () { //pomptBox active
     tbIndicator.style.setProperty("animation-name", "blink");
@@ -14,7 +15,6 @@ textBox.addEventListener("focus", function () { //pomptBox active
 });
 
 textBox.addEventListener('blur', function () { //pomptBox deselected
-    checkEntry();
     if (sendButton.matches(":hover") == true) {
         addChatEntry(true);
         tbIndicator.style.setProperty("opacity", "0.3");
@@ -22,6 +22,7 @@ textBox.addEventListener('blur', function () { //pomptBox deselected
 
     tbIndicator.style.setProperty("animation-name", "none");
     
+    textBox.value = textBox.value.trim();
     if (textBox.value === "") {
         textBox.setAttribute("rows", "1");
         tbIndicator.style.setProperty("opacity", "0.3");
@@ -52,9 +53,9 @@ textBox.addEventListener("input", () => {
 
 function checkEntry() {
     //textBox.value = textBox.value.replace(/[^\x00-\x7F]/g, ""); // stolen regex - https://www.geeksforgeeks.org/how-to-remove-all-non-ascii-characters-from-the-string-using-javascript/
-    textBox.value = textBox.value.trim();
+    // console.log(textBox.value.trim().length);  
+    if (textBox.value.trim().length >= 3){
 
-    if (textBox.value.length >= 3){
         sendButton.setAttribute("class", "filterBlue");
         entryAllowed = true;
     }
@@ -97,22 +98,24 @@ function updateGallery(cssRules) { // Function to make/manage a dedicated CSS st
 
     dynamicStyleSheet.textContent = newCSS;
 }
-
 updateGallery();
-portraitGallery.addEventListener('mouseover', (event) => {
-    // portraitGallery.mouseout();
-});
+
+
 portraitGallery.addEventListener('mouseover', pgInteraction);
 portraitGallery.addEventListener('click', pgInteraction);
 function pgInteraction(event) {
     const hoveredElement = event.target;
-    if (!hoveredElement.children[1] || hoveredElement.children[1].tagName !== "P") return;
+    const hoverStats = hoveredElement.getElementsByClassName("allyStats")[0];
+    if (!hoverStats) return;
     if (hoveredElement.parentElement === portraitGallery) {
-        const textRect = hoveredElement.children[1].getBoundingClientRect();
+        const hoverStatsRect = hoverStats.getBoundingClientRect();
         const hovRect = hoveredElement.getBoundingClientRect();
         
-        hoveredElement.children[1].style.setProperty("top", `${hovRect.top+10}px`);
-        hoveredElement.children[1].style.setProperty("left", `${hovRect.left-textRect.width -3}px`);
+        hoverStats.style.setProperty("top", `${hovRect.top+10}px`);
+        hoverStats.style.setProperty("left", `${hovRect.left-hoverStatsRect.width -3}px`);
+        if (hoverStatsRect.clientHeight > hovRect.clientHeight) { //skip the little offset bump
+            hoverStats.style.setProperty("top", `${hovRect.top}px`);
+        }
     }
 }
 
@@ -129,13 +132,17 @@ function togglePopup(toggleState){
 const unameTextBox = document.getElementById("uname");
 unameTextBox.value = localStorage.getItem("Username") || "username";
 const unameInstances = document.getElementsByClassName("username");
-Array.from(unameInstances).forEach(element => {
-    element.innerText = unameTextBox.value; // Replace 'New Text' with the desired value
-    element.addEventListener('dblclick', () => {
-        togglePopup();
-        unameTextBox.focus();
+function unameDBLCupdate() {
+    Array.from(unameInstances).forEach(element => {
+        element.innerText = unameTextBox.value; // Replace 'New Text' with the desired value
+        element.addEventListener('dblclick', () => {
+            togglePopup();
+            unameTextBox.focus();
+        });
     });
-});
+}
+unameDBLCupdate();
+
 unameTextBox.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         unameTextBox.blur();
