@@ -1,0 +1,142 @@
+{
+  "saveName": "save name",
+  "character": {
+    "name": "First_Names \"Alias\" Surname",
+    "archetype": "Archetype_1 / Archetype_2_if_applicable",
+    "meta": "Metahumanity_Type",
+    "sex": "M/F/NB",
+    "age": "age_uint"
+  },
+  "inventory": [
+    {
+      "item": "sword",
+      "quantity": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "pistol",
+      "quantity": 2,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "idknuke",
+      "quantity": 1,
+      "description": "ahahaha johnny silverhand approves"
+    }
+  ],
+  "resources": {
+    "lifestyle": "squatter",
+    "nuyen": 3000,
+    "karmaTotal": 999,
+    "karmaCurrent": 5
+  },
+  "magic": [
+    {
+      "item": "Fire Bolt",
+      "level": "1",
+      "description": "Wizard fire out of your hands blah blah blah"
+    },
+    {
+      "item": "Lightning Bolt",
+      "level": "3",
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "Caustic Splash",
+      "level": "2",
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "Infernus Spirit",
+      "level": "6",
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "City Spirit",
+      "level": "3",
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "Stun Punch",
+      "level": "2",
+      "description": "description blah blah blah"
+    }
+  ],
+  "attributes": {
+    "body": 0,
+    "agility": 0,
+    "reaction": 0,
+    "strength": 0,
+    "willpower": 0,
+    "logic": 0,
+    "intuition": 0,
+    "charisma": 0,
+    "magic": 0,
+    "resonance": 0,
+    "edge": 0,
+    "essense": 0,
+    "initiative": 0,
+    "matrixInitiative": 0,
+    "astralInitiative": 0
+  },
+  "limits": {
+    "physical": 0,
+    "mental": 0,
+    "social": 0,
+    "astral": 0
+  },
+  "skills": [
+    {
+      "item": "physical skill 1",
+      "level": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "physical skill 2",
+      "level": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "mental skill 1",
+      "level": 1,
+      "description": "description blah blah blah"
+    }
+  ],
+  "qualitiesPositive": [
+    {
+      "item": "qual1",
+      "description": "description blah blah"
+    },
+    {
+      "item": "qual2",
+      "description": "description blah blah"
+    }
+  ],
+  "qualitiesNegative": [
+    {
+      "item": "qual1",
+      "description": "description blah blah"
+    },
+    {
+      "item": "qual2",
+      "description": "description blah blah"
+    }
+  ],
+  "augmentations": [
+    {
+      "item": "cyberware 1",
+      "level": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "cyberware 2",
+      "level": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "bioware 1",
+      "level": 1,
+      "description": "description blah blah blah"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+gameHistory: The game history key holds the keys to all of the occurring in the save, it can contain as many entries as possible
+
+transcript: it holds the dialogues happening, speaker attribution must be done strictly in the following ways
+    -- Player entries involving speech must be attributed to "Player" you may embellish and fluff up the player's prompt as a response but you must stay faithful to the players "intentions".
+    -- Every other spoken dialogue involving speech from NPC characters must be attributed to their respective characters.
+    -- All other dialogue must be attributed to the "Game Master", this may include scene or action descriptions.
+    -- Add as many transcript elements as needed to adhere to the rules
+
+AIsummary / UserSummary: succinct summary of your response containing any long-term relevant information, you do not need to summarise any short-term fluff
+
+CurrentMission: [append Active or Post here] Cool Fun Clever Mission Title, perhaps a pop culture reference just something to make the player smile. using "[Active] Mr & Mrs Smith" for a mission where the mercenary  player has to find their mercenary ex
+    -- Do not change once set, until player accepts another mission then generate another one.
+
+status: what is the current objective, if none put what is happening, example "infiltrating shadowcorp", "meeting the Johnson"
+    -- dynamic but do not change too often 
+
+isEntryImportant: Like in the telltale games, only keep this important things are actually happening, example fee discussion or milestones just a flag for game history entries worth archiving or referencing later (e.g. betrayal, big reveals, new contacts, etc).  

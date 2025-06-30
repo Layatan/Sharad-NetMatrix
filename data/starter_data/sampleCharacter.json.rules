@@ -1,0 +1,27 @@
+saveName: Name of the save file, once set never change unless specifically requested by the player
+
+character: all felds here must be kept and none added
+
+inventory: dynamic add / remove or increase / decrease  entries when acquired or used up / discarded
+
+resources: strict no new items should be added
+
+lifestyle: must be loosely based on shadowrun lifestyle options
+
+nuyen: current nuyen ammount must be updated everytime there is a credit or debit in the account
+
+karmaTotal: total karma the character has received since creation must be updated when relevant
+
+karmaCurrent: current unspent karma amount must be credited or removeds whenever appropriate
+
+magic: An array of spells and spirits and all things magic that has levels, unless more appropriate to inventory, eg, fetishes, inactive / unusable spells
+
+attributes: Attributs of the character no new keys should be added after being set, character can spend karma to change values is allowed by shadowrun 5e / 6e rules
+
+limits: set using the characters capabilities so when attributes update change this one according to shadowrun 5e / 6e rules
+
+skill: as much as needed to fit the character
+
+qualitiesPositive / qualitiesNegative: positive qualities of the character, useful in gameplay and narration.
+
+augmentations: array of cyberware and bioware the character is sporting if necessary, useful in gameplay and narration.

@@ -1,0 +1,176 @@
+// Remove comments from JSON. Classifications below
+// strict = fields must be populated and no new vaiables should be added
+// loose = likely and array so feel free to add more or less as appropriate
+
+{
+  "saveName": "save name", //strict
+  "character": {
+    "name": "First_Names \"Alias\" Surname",
+    "archetype": "Archetype_1 / Archetype_2_if_applicable",
+    "meta": "Metahumanity_Type",
+    "sex": "M/F/NB",
+    "age": "age_uint"
+  }, //strict
+  "inventory": [
+    {
+      "item": "sword",
+      "quantity": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "pistol",
+      "quantity": 2,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "idknuke",
+      "quantity": 1,
+      "description": "ahahaha johnny silverhand approves"
+    }
+  ], //loose
+  "resources": {
+    "lifestyle": "squatter",
+    "nuyen": 3000,
+    "karmaTotal": 999,
+    "karmaCurrent": 5
+  }, //strict
+  "magic": [
+    {
+      "item": "Fire Bolt",
+      "level": "1",
+      "description": "Wizard fire out of your hands blah blah blah"
+    },
+    {
+      "item": "Lightning Bolt",
+      "level": "3",
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "Caustic Splash",
+      "level": "2",
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "Infernus Spirit",
+      "level": "6",
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "City Spirit",
+      "level": "3",
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "Stun Punch",
+      "level": "2",
+      "description": "description blah blah blah"
+    }
+  ], //loose
+  "attributes": {
+    "body": 0,
+    "agility": 0,
+    "reaction": 0,
+    "strength": 0,
+    "willpower": 0,
+    "logic": 0,
+    "intuition": 0,
+    "charisma": 0,
+    "magic": 0,
+    "resonance": 0,
+    "edge": 0,
+    "essense": 0,
+    "initiative": 0,
+    "matrixInitiative": 0,
+    "astralInitiative": 0
+  }, //strict
+  "limits": {
+    "physical": 0,
+    "mental": 0,
+    "social": 0,
+    "astral": 0
+  }, //strict
+  "skills": [
+    {
+      "item": "physical skill 1",
+      "level": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "physical skill 2",
+      "level": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "mental skill 1",
+      "level": 1,
+      "description": "description blah blah blah"
+    }
+  ], //loose
+  "qualitiesPositive": [
+    {
+      "item": "qual1",
+      "description": "description blah blah"
+    },
+    {
+      "item": "qual2",
+      "description": "description blah blah"
+    }
+  ], //loose
+  "qualitiesNegative": [
+    {
+      "item": "qual1",
+      "description": "description blah blah"
+    },
+    {
+      "item": "qual2",
+      "description": "description blah blah"
+    }
+  ], //loose
+  "augmentations": [
+    {
+      "item": "cyberware 1",
+      "level": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "cyberware 2",
+      "level": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "bioware 1",
+      "level": 1,
+      "description": "description blah blah blah"
+    }
+  ], //loose
+  "gameHistory": [
+    {
+      "transcript": [
+        {
+          "speaker_name": "value",
+          "dialogue": "value"
+        },
+        {
+          "speaker_name": "value",
+          "dialogue": "value"
+        }
+      ],
+      "AIsummary": "succint summary of your response containing any long-term relevant information, you do not need to summarise any short-term fluff",
+      "UserSummary": "succint summary of my previous response containing any long-term relevant information,  you do not need to summarise any short-term fluff"
+    },
+    {
+      "transcript": [
+        {
+          "speaker_name": "value",
+          "dialogue": "value"
+        },
+        {
+          "speaker_name": "value",
+          "dialogue": "value"
+        }
+      ],
+      "AIsummary": "succint summary of your response containing any long-term relevant information, you do not need to summarise any short-term fluff",
+      "UserSummary": "succint summary of my previous response containing any long-term relevant information,  you do not need to summarise any short-term fluff"
+    }
+  ]
+}

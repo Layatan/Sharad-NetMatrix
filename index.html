@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-title" content="Sharad" />
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="data/favicons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="data/favicons/favicon.svg" />
-    <link rel="shortcut icon" href="data/favicons/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="data/favicons/apple-touch-icon.png" />
-    <link rel="manifest" href="data/favicons/site.webmanifest" />
+    <link rel="icon" type="image/png" href="data/media/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="data/media/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="data/media/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="data/media/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="data/media/favicons/site.webmanifest" />
 
-    <script src="styleHelper.js" defer></script>
-    <script src="engine.js" defer></script> <!-- keep below style helper -->
+    <script src="scripts/styleHelper.js" defer></script>
+    <script src="scripts/engine.js" defer></script> <!-- keep below style helper -->
       
     <title>Sharad-Matrix</title>
   </head>
   <body>
     <header>
-        <img src="data/SRLogo.png" alt="Shadowrun Logo">
+        <img src="data/media/SRLogo.png" alt="Shadowrun Logo">
         <div>
             <h1 id="title">SHADOWRUN ADVENTURE</h1>
             <h2 id="time"><span id="hour">13</span> : <span id="minute">25</span> : <span id="second">46</span></h2>
@@ -27,7 +27,7 @@
     <div class="leftSide">
         <section id="console">
           <div class="indicator" aria-hidden="true"></div>
-          <img id="settings" src="data/settings.png" alt="" onclick="togglePopup()">
+          <img id="settings" src="data/media/settings.png" alt="" onclick="togglePopup()">
           <div id="transcript">
             <p><span class="speaker">Game Master</span class="dialogue">You reach the spot where you initially entered, and just as you’re about to slip through, you hear a voice call out from behind.</span></p>
             <p><span class="speaker">Abraham 'Ace' Bah</span class="dialogue">"Frag!" Ace hisses, his eyes wide as he realizes the guard has seen you.</span></p>
@@ -46,7 +46,7 @@
             <span class="username"></span>
             <textarea id="prompt" name="promptBox" rows="1" cols="103" placeholder="prompt here..."></textarea>
             
-            <img id="send" title="Ctrl+Enter" src="data/send.png" alt="Send Icon" onclick="addChatEntry(true)">
+            <img id="send" title="Ctrl+Enter" src="data/media/send.png" alt="Send Icon" onclick="addChatEntry(true)">
             <div class="indicator" aria-hidden="true"></div>
         </section>
     </div>
@@ -257,29 +257,29 @@
           <h2><span>ALIAS</span><span>AFFILIATES</span></h2>
           <div class="portraitGallery">
             <div>
-              <img src="data/Relic Rhyzer.jpg" alt="">
+              <img src="data/media/Relic Rhyzer.jpg" alt="">
               <p class="allyStats"><span class="characterName">Alias</span></p>
             </div>
             <div>
-              <img src="data/DALL·E 2025-02-24 17.20.32 - A cyberpunk-style portrait of a young Black African woman with visible cybernetic augmentations along the edges of her jaw and face. Her hairstyle fea.webp" alt="">
+              <img src="data/media/DALL·E 2025-02-24 17.20.32 - A cyberpunk-style portrait of a young Black African woman with visible cybernetic augmentations along the edges of her jaw and face. Her hairstyle fea.webp" alt="">
               <p  class="allyStats"><span class="allyName">Ally's pseudo</span><span class="allyLoyalty">4</span><span class="allyConn">6</span></p>
             </div>
             <div>
-              <img src="data/Npc_humanmale_paco.webp" alt="">
+              <img src="data/media/Npc_humanmale_paco.webp" alt="">
               <p class="allyStats"><span class="allyName">Ally's pseudo</span><span class="allyLoyalty">4</span><span class="allyConn">6</span></p>
             </div>
             <div>
-              <img src="data/Pc_dwarffemale_04a_visseral.webp" alt="">
+              <img src="data/media/Pc_dwarffemale_04a_visseral.webp" alt="">
               <p class="allyStats"><span class="allyName">Ally's pseudo</span><span class="allyLoyalty">4</span><span class="allyConn">6</span></p>
             </div>
             <div>
-              <img src="data/Pc_dwarffemale_04a_visseral.webp" alt="">
+              <img src="data/media/Pc_dwarffemale_04a_visseral.webp" alt="">
               <p class="allyStats"><span class="allyName">Ally's pseudo</span><span class="allyLoyalty">4</span><span class="allyConn">6</span></p>
             </div>
           </div>
         </section>
     </div>
-    <div id="popup"><img class="closePopup" src="data/close.png" onclick="togglePopup()">
+    <div id="popup"><img class="closePopup" src="data/media/close.png" onclick="togglePopup()">
       <ul #id="popup_settings" data-Title="Settings">
         <li>Username<textarea id="uname" rows="1" cols="1" maxlength="20" placeholder="username"></textarea></li>
         <li>LLM <select name="settings1" id="settings1">
