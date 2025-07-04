@@ -121,8 +121,12 @@ function pgInteraction(event) {
 
 
 const popup = document.getElementById("popup");
-function togglePopup(toggleState){
-    // popup.getElementById(elementName);
+function togglePopup(whichPopup, toggleState){
+    Array.from(popup.children).forEach(child => {
+            if (child.tagName.toLowerCase() === "img") {}
+            else child.style.display = "none";
+      });
+    popup.querySelector(`[data-title="${whichPopup}"]`).removeAttribute("style");
     if (popup.style.getPropertyValue("display") === "" || toggleState === true) {
         popup.style.setProperty("display", "block");
     }

@@ -24,7 +24,7 @@
     --panelGaps: 1dvw;
     font-size: var(--fontSmall);
 }
-h1, h2, h3, #popup > ul[data-Title]::before {
+h1, h2, h3, #popup > [data-Title]::before {
     all: unset;
     font-family: 'Turret Road';
     font-size: var(--fontBig);
@@ -46,6 +46,24 @@ h3 {
         content: '/$/>';
         user-select: text;
     }
+button {
+    color: var(--colourNeonOrange);
+    text-align: center;
+    background: none;
+    box-shadow: 1px 1px var(--colourNeonOrange);
+    font-family: 'Turret Road';
+    font-weight: 600;
+    font-size: var(--fontMed);
+    text-transform: uppercase;
+    padding: 3px;
+}
+    button:hover {
+        background: var(--colourNeonOrange);
+        color: var(--colourSecBG);
+        box-shadow: none;
+        outline: 1px solid var(--colourNeonOrange);
+    }
+
 
 html {
     margin: 0;
@@ -192,7 +210,7 @@ section {
         transition: 500ms;
     }
 
-    #console > #transcript {
+    #console > #transcript, #console > #mainMenu {
         overflow-y: auto;
         margin: 60px 0 5px 15px;
         padding-right: 15px;
@@ -226,7 +244,18 @@ section {
             .playerInput > .username {
                 direction: rtl;
             }
-        
+    #console > #mainMenu {
+        margin-top: 80px
+    }
+        #console > #mainMenu > #rootMain {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 2px;
+        }
+        #console > #mainMenu > #rootMain > *:nth-last-child(1):nth-child(odd) {
+            grid-column: span 2;
+        }
 
 #characterInfo {
     overflow-y: scroll;
@@ -459,6 +488,7 @@ section {
     box-shadow: inset 0 var(--popupWindow) black;
 
     display: none;
+    z-index: 1000;
 }
     #popup > .closePopup {
         --popupSize: 16px;
@@ -473,7 +503,7 @@ section {
         margin: 0;
         padding: 0;
     }
-        #popup > ul[data-Title]::before {
+        #popup > [data-Title]::before {
             content: attr(data-Title);
             position: absolute;
             top: 5px;
@@ -510,6 +540,32 @@ section {
             #popup > ul > li > textarea {
                 resize: none;
             }
+    
+    /* #popup > #getSave {
+        display: grid;
+        align-items: center;
+    } */
+        #popup > #getSave > img {
+            width: 200px;
+            aspect-ratio: 1;
+            border-radius: 10px;
+            display: block;
+            margin: auto;
+            margin-block: 20px 10px;
+        }
+        #popup > #getSave > h2 {
+            display: block;
+            text-align: center;
+        }
+        #popup > #getSave > input {
+            position: absolute;
+            width: 100%;
+            height: calc(100% - var(--popupWindow));
+            inset: 0;
+            top: var(--popupWindow);
+            opacity: 0;
+            /* background: red; */
+        }
 
 
 

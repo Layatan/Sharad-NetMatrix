@@ -1,0 +1,177 @@
+{
+  "saveName": "save name",
+  "character": {
+    "name": "First_Names \"Alias\" Surname",
+    "archetype": "Arch_1 / Arch_2",
+    "meta": "Metahuman",
+    "sex": "NB",
+    "age": "69"
+  },
+  "inventory": [
+    {
+      "item": "sword",
+      "quantity": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "pistol",
+      "quantity": 2,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "idknuke",
+      "quantity": 1,
+      "description": "ahahaha johnny silverhand approves"
+    }
+  ],
+  "resources": {
+    "lifestyle": "squatter",
+    "nuyen": 3000,
+    "karmaTotal": 999,
+    "karmaCurrent": 5
+  },
+  "magic": [
+    {
+      "item": "Fire Bolt",
+      "level": "1",
+      "description": "Wizard fire out of your hands blah blah blah"
+    },
+    {
+      "item": "Lightning Bolt",
+      "level": "3",
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "Caustic Splash",
+      "level": "2",
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "Infernus Spirit",
+      "level": "6",
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "City Spirit",
+      "level": "3",
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "Stun Punch",
+      "level": "2",
+      "description": "description blah blah blah"
+    }
+  ],
+  "attributes": {
+    "body": 0,
+    "agility": 1,
+    "reaction": 2,
+    "strength": 3,
+    "willpower": 4,
+    "logic": 5,
+    "intuition": 69,
+    "charisma": 7,
+    "magic": 8,
+    "resonance": 9,
+    "edge": 10,
+    "essense": 11,
+    "initiative": 12,
+    "matrixInitiative": 13,
+    "astralInitiative": 14
+  },
+  "limits": {
+    "physical": 15,
+    "mental": 16,
+    "social": 17,
+    "astral": 18
+  },
+  "skills": [
+    {
+      "item": "physical skill 1",
+      "level": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "physical skill 2",
+      "level": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "mental skill 1",
+      "level": 1,
+      "description": "description blah blah blah"
+    }
+  ],
+  "qualitiesPositive": [
+    {
+      "item": "qual1",
+      "description": "description blah blah"
+    },
+    {
+      "item": "qual2",
+      "description": "description blah blah"
+    }
+  ],
+  "qualitiesNegative": [
+    {
+      "item": "qual1",
+      "description": "description blah blah"
+    },
+    {
+      "item": "qual2",
+      "description": "description blah blah"
+    }
+  ],
+  "augmentations": [
+    {
+      "item": "cyberware 1",
+      "level": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "cyberware 2",
+      "level": 1,
+      "description": "description blah blah blah"
+    },
+    {
+      "item": "bioware 1",
+      "level": 1,
+      "description": "description blah blah blah"
+    }
+  ],
+  "portraits": [
+    {
+      "name": "Player",
+      "description": "description blah blah blah",
+      "image": "0.jpg"
+    },
+    {
+      "name": "Hecker",
+      "description": "description blah blah blah",
+      "loyalty": 1,
+      "connection": 2,
+      "image": "1.webp"
+    },
+    {
+      "name": "Paco",
+      "description": "description blah blah blah",
+      "loyalty": 3,
+      "connection": 4,
+      "image": "2.webp"
+    },
+    {
+      "name": "McKlunksky",
+      "description": "description blah blah blah",
+      "loyalty": 5,
+      "connection": 6,
+      "image": "3.webp"
+    },
+    {
+      "name": "Cute One",
+      "description": "description blah blah blah",
+      "loyalty": 7,
+      "connection": 8,
+      "image": "4.webp"
+    }
+  ]
+}
