@@ -540,32 +540,6 @@ section {
             #popup > ul > li > textarea {
                 resize: none;
             }
-    
-    /* #popup > #getSave {
-        display: grid;
-        align-items: center;
-    } */
-        #popup > #getSave > img {
-            width: 200px;
-            aspect-ratio: 1;
-            border-radius: 10px;
-            display: block;
-            margin: auto;
-            margin-block: 20px 10px;
-        }
-        #popup > #getSave > h2 {
-            display: block;
-            text-align: center;
-        }
-        #popup > #getSave > input {
-            position: absolute;
-            width: 100%;
-            height: calc(100% - var(--popupWindow));
-            inset: 0;
-            top: var(--popupWindow);
-            opacity: 0;
-            /* background: red; */
-        }
 
 
 

@@ -1,5 +1,11 @@
 {
-  "saveName": "save name",
+  "metadata": {
+    "uuid": "2cb0fdef-0d5f-4a27-80e9-6cb7be99255a",
+    "saveName": "save name",
+    "dateCreated": 1754687946202,
+    "lastSaved": 1754687946202
+    "interactionCount": 5
+  },
   "character": {
     "name": "First_Names \"Alias\" Surname",
     "archetype": "Arch_1 / Arch_2",

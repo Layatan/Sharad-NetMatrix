@@ -1,4 +1,4 @@
-console.log("!saveLoader.js loaded!")
+console.log("!saveLoader.js loaded!");
 const getSave = document.getElementById("getSave");
 const input = document.getElementById("getSaveFile");
 const fileFeedback = getSave.querySelector("h2");
@@ -8,19 +8,16 @@ const loadFeedback = getSave.querySelector("ul");
 // let historyJSON; //permanent RAM kept freq updated global
 
 input.addEventListener('change', () => {
-    const file = input.files[0];
-    console.log("User input file:" + file.name)
+    const file = input.files[0]; //
+    console.log("User input file: " + file.name)
 
-    while (loadFeedback.children.length > 1) {
-        loadFeedback.removeChild(loadFeedback.lastElementChild);
-    }
+    loadFeedback.innerHTML = "<li>check console for verbose loading progress</li>";
 
     if (!file) return;
-    // const defaultFeedback = "click or drag in [save_file.zip]";
-
     if (file.name.toLowerCase().endsWith('.zip') == false) {
       fileFeedback.innerText = "This ain't a zip file bruh >:|";
       fileFeedback.style.color = "red";
+      return;
     }
     else {
       fileFeedback.innerText = `Loading... ${file.name}`;
@@ -77,7 +74,7 @@ async function validateSaveFile(file){
     }
     
     if (hasCharacter) {
-        loadCharacter(characterParsed);
+        // loadCharacter(characterParsed);
         const newEntry = document.createElement("li");
         newEntry.style.color = "green";
         newEntry.innerText = "Valid Character.json found - loading character."
@@ -100,16 +97,4 @@ async function validateSaveFile(file){
         newEntry.innerText = "History.json not found! starting new story with character."
         loadFeedback.appendChild(newEntry);
     }
-}
-
-function loadCharacter(charJson) {
-    try {
-        
-    
-    } catch (e) {
-        console.warn("Missing fields or bad structure:", e);
-    }
-}
-function loadHistory(historyJson) {
-    
 }

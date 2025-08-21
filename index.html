@@ -23,9 +23,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
 
     <script src="scripts/styleHelper.js" defer></script>
+
+    <script src="scripts/saveManagement.js" defer></script>
     <script src="scripts/saveLoader.js" defer></script>
-    <script src="scripts/engine.js" defer></script>
+
     <!-- keep below style helper -->
+    <script src="scripts/engine.js" defer></script>
 
     <title>Sharad-Matrix</title>
   </head>
@@ -157,7 +160,7 @@
           <br />
           <h3>Magic</h3>
           <ul id="inventoryMagic" class="magicInv ib_list">
-            <!-- <li>Fire Bolt [<span class="A">lv.1</span>]</li> -->
+            <li>- [<span class="A">lv. 0</span>]</li>
           </ul>
         </div>
 
@@ -240,20 +243,18 @@
         <div>
           <h2>SKILLS</h2>
           <ul id="skillsList" class="skills g_list">
-            <li>
-              <!-- <span class="Q">physical!skill1:</span><span class="A">-</span> -->
-            </li>
+            <li><span class="Q">-:</span><span class="A">-</span></li>
           </ul>
         </div>
 
         <div>
           <h2>QUALITIES</h2>
           <ul id="qualitiesPositive" class="positive ib_list">
-            <!-- <li>Ambidextrous</li> -->
+            <li>Quality</li>
           </ul>
           <br />
           <ul id="qualitiesNegative" class="negative ib_list">
-            <!-- <li>Addiction</li> -->
+            <li>Quality</li>
           </ul>
         </div>
 
@@ -313,9 +314,10 @@
         src="data/media/close.png"
         onclick="togglePopup('Settings', false)"
       />
-      <ul id="popupSettings" data-Title="Settings" style="display: none">
+      <ul id="popupSettings" data-Title="Settings">
         <li>
-          Username<textarea
+          Username
+          <textarea
             id="uname"
             rows="1"
             cols="1"
@@ -333,19 +335,25 @@
           </select>
         </li>
       </ul>
-      <div id="getSave" data-Title="Load Save">
-        <input
-          type="file"
-          accept=".zip,application/zip,application/x-zip-compressed"
-          name="getSaveFile"
-          id="getSaveFile"
-        />
-        <img src="data/media/insertSaveBG.webp" alt="" />
-        <h2>click or drag in [save_file.zip]</h2>
-        <ul>
-          <li>check console for verbose loading progress</li>
-        </ul>
-      </div>
+      <ul id="popupSettings" data-Title="Load Save">
+        <li>
+          Username Save 1
+          <button>Load</button>
+          <button>X</button>
+        </li>
+        <li>
+          LLM
+          <select name="settings1" id="settings1">
+            <option value="volvo">Deepseek R1</option>
+            <option value="saab">llama 3.2</option>
+            <option value="opel">ChatGPT (!api!)</option>
+            <option value="audi">Deepseek R1 (!api!)</option>
+          </select>
+        </li>
+      </ul>
+      <ul>
+        <li>LLM</li>
+      </ul>
     </div>
   </body>
 </html>
