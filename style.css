@@ -481,6 +481,7 @@ section {
     min-height: 150px;
     width: max-content;
     height: max-content;
+    max-height: 76svh;
 
     padding: var(--popupWindow) 20px 10px 10px;
     border: 2px solid black;
