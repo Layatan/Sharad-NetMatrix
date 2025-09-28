@@ -13,25 +13,8 @@
       ],
       "AIsummary": "succint summary of your response containing any long-term relevant information, you do not need to summarise any short-term fluff",
       "UserSummary": "succint summary of my previous response containing any long-term relevant information,  you do not need to summarise any short-term fluff",
-      "CurrentMission": "[append Active or Post here] Cool Fun Clever Mission Title",
-      "status": "what is the current objective, if none put what is happening",
-      "isEntryImportant": false
-    },
-    {
-      "transcript": [
-        {
-          "speaker_name": "value",
-          "dialogue": "value"
-        },
-        {
-          "speaker_name": "value",
-          "dialogue": "value"
-        }
-      ],
-      "AIsummary": "succint summary of your response containing any long-term relevant information, you do not need to summarise any short-term fluff",
-      "UserSummary": "succint summary of my previous response containing any long-term relevant information,  you do not need to summarise any short-term fluff",
-      "CurrentMission": "[append Active or Post here] Cool Fun Clever Mission Title",
-      "status": "what is the current objective, if none put what is happening",
+      "CurrentMission": "[Active / Completed] Cool Fun Clever Title For The Current Run, once picked cannot be changed",
+      "CurrentObjective": "Describes the current objective of the character in present tense",
       "isEntryImportant": true
     }
   ]

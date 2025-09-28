@@ -1,14 +1,12 @@
 console.log("!saveManagement.js loaded!");
 const dbName = "GameSaveDB";
-const storeName = "SaveFiles";
+const saveFiles = "SaveFiles";
 
-//all AI code i cant be asked to learn indexedDB
+//because some mobile browsers are stingy with IndexedDB space i've set a max 15, 
+// if youre on computer you can have many many more saves, 100 or smn depending on how large your saves are
+const global_MaxSaves = 15; //technically this plus one in ever you load from file - assuming i implemented it.
 
-function generateUUID() { //UUIDv4 generation magic
-    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-    );
-}
+//TOUCH NOTHING ELSE UNLESS YOU KNOW WHAT YOU'RE DOING. thanks :*
 
 
 function openDB() {
@@ -16,7 +14,7 @@ function openDB() {
         const request = indexedDB.open(dbName, 1);
         request.onupgradeneeded = (event) => {
             const db = event.target.result;
-            db.createObjectStore(storeName, { keyPath: "saveID" });
+            db.createObjectStore(saveFiles, { keyPath: "saveID" });
         };
         request.onsuccess = () => resolve(request.result);
         request.onerror = () => reject(request.error);
@@ -24,45 +22,50 @@ function openDB() {
 }
 openDB();
 
-async function getAllSaves() {
-    const db = await openDB();
-    const tx = db.transaction(storeName, "readonly");
-    const store = tx.objectStore(storeName);
-    const request = store.getAll();
-  
-    return new Promise((resolve, reject) => {
-        request.onsuccess = () => resolve(request.result);
-        request.onerror = () => reject(request.error);
-    });
-}
-
-async function newSave(saveID, characterJSON, historyJSON, imageFiles) {
-    const db = await openDB();
-    const tx = db.transaction(storeName, "readwrite");
-    const store = tx.objectStore(storeName);
-  
-    // Convert image files to blobs
-    const galleryImages = await Promise.all(
+async function newSave(characterJSON, historyJSON,  imageFiles) {
+    const galleryImages = await Promise.all( //not doing this before a transaction fails for whatever reason. whatever :/
         imageFiles.map(file => file.arrayBuffer().then(buffer => new Blob([buffer], { type: file.type })))
     );
+
+    const db = await openDB();
+    const tx = db.transaction(saveFiles, "readwrite");
+    const saves = tx.objectStore(saveFiles);
+    
+    const currSaveCount = await new Promise((resolve, reject) => {
+        const countRequest = saves.count();
+        countRequest.onsuccess = () => resolve(countRequest.result);
+        countRequest.onerror = () => reject(countRequest.error);
+    });  
+    if (currSaveCount > global_MaxSaves) {
+        console.log(`You've reached the maximum saves set: ${global_MaxSaves}\n If you want more saves change 'global_MaxSaves' variable in 'scripts/saveManagement.js' file`);
+        return;
+    }
+    
+    console.log(galleryImages);
   
     const saveData = {
-        saveID,
-        timestamp: Date.now(),
+        saveID: crypto.randomUUID(),
+        createdDate: Date.now(),
+        lastSaved: Date.now(),
         characterData: characterJSON,
-        historyData: historyJSON,
-        galleryImages
+        historyData: historyJSON
     };
   
-    store.put(saveData);
-    return tx.complete;
+    const putRequest = saves.put(saveData);
+
+    await new Promise((resolve, reject) => {
+        putRequest.onsuccess = () => resolve();
+        putRequest.onerror = () => reject(putRequest.error);
+    });
+    
+    await tx.complete;
 }
   
 
 async function loadSave(saveID) {
     const db = await openDB();
-    const tx = db.transaction(storeName, "readonly");
-    const store = tx.objectStore(storeName);
+    const tx = db.transaction(saveFiles, "readonly");
+    const store = tx.objectStore(saveFiles);
     const request = store.get(saveID);
   
     return new Promise((resolve, reject) => {
@@ -71,3 +74,31 @@ async function loadSave(saveID) {
     });
 }
 
+async function getAllSaves() {
+    const db = await openDB();
+    const tx = db.transaction(saveFiles, "readonly");
+    const store = tx.objectStore(saveFiles);
+    const request = store.getAll();
+  
+    return new Promise((resolve, reject) => {
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+    });
+}
+  
+
+async function dbg_clearSaveStore() { //debug only - 
+    const db = await openDB();
+    const tx = db.transaction(saveFiles, "readwrite");
+    const store = tx.objectStore(saveFiles);
+  
+    const clearRequest = store.clear();
+  
+    await new Promise((resolve, reject) => {
+      clearRequest.onsuccess = () => resolve();
+      clearRequest.onerror = () => reject(clearRequest.error);
+    });
+  
+    await tx.done;
+    console.log("SaveFiles store cleared.");
+  }

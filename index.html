@@ -5,19 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-title" content="Sharad" />
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="data/favicons/favicon-96x96.png"
-      sizes="96x96"
-    />
+    <link rel="icon" type="image/png" href="data/favicons/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="data/favicons/favicon.svg" />
     <link rel="shortcut icon" href="data/favicons/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="data/favicons/apple-touch-icon.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="data/favicons/apple-touch-icon.png" />
     <link rel="manifest" href="data/favicons/site.webmanifest" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.0/jszip.min.js"></script>
@@ -46,12 +37,7 @@
     <div class="leftSide">
       <section id="console">
         <div class="indicator" aria-hidden="true"></div>
-        <img
-          id="settings"
-          src="data/media/settings.png"
-          alt=""
-          onclick="togglePopup('Settings')"
-        />
+        <img id="settings" src="data/media/settings.png" alt="" onclick="togglePopup('Settings')" />
         <div id="mainMenu">
           <div id="rootMain">
             <button>New Game</button>
@@ -86,21 +72,9 @@
       </section>
       <section id="prompter">
         <span class="username"></span>
-        <textarea
-          id="prompt"
-          name="promptBox"
-          rows="1"
-          cols="103"
-          placeholder="prompt here..."
-        ></textarea>
+        <textarea id="prompt" name="promptBox" rows="1" cols="103" placeholder="prompt here..."></textarea>
 
-        <img
-          id="send"
-          title="Ctrl+Enter"
-          src="data/media/send.png"
-          alt="Send Icon"
-          onclick="addChatEntry(true)"
-        />
+        <img id="send" title="Ctrl+Enter" src="data/media/send.png" alt="Send Icon" onclick="addChatEntry(true)" />
         <div class="indicator" aria-hidden="true"></div>
       </section>
     </div>
@@ -116,21 +90,13 @@
             </span>
           </p>
           <p>
-            <span id="characterArch">
-              <span class="Q">Arch:</span><span class="A">-</span>
-            </span>
+            <span id="characterArch"> <span class="Q">Arch:</span><span class="A">-</span> </span>
           </p>
           <br />
           <p>
-            <span id="characterMeta">
-              <span class="Q">Meta:</span><span class="A">-</span>
-            </span>
-            <span id="characterSex">
-              <span class="Q">Sex:</span><span class="A">-</span>
-            </span>
-            <span id="characterAge">
-              <span class="Q">Age:</span><span class="A">-</span>
-            </span>
+            <span id="characterMeta"> <span class="Q">Meta:</span><span class="A">-</span> </span>
+            <span id="characterSex"> <span class="Q">Sex:</span><span class="A">-</span> </span>
+            <span id="characterAge"> <span class="Q">Age:</span><span class="A">-</span> </span>
           </p>
         </div>
 
@@ -142,20 +108,12 @@
           <br />
           <h3>Resources</h3>
           <p>
-            <span id="inventoryLifestyle">
-              <span class="Q">Lifestyle:</span><span class="A">-</span>
-            </span>
-            <span id="inventoryNuyen">
-              <span class="Q">Nuyen:</span><span class="A">-</span>
-            </span>
+            <span id="inventoryLifestyle"> <span class="Q">Lifestyle:</span><span class="A">-</span> </span>
+            <span id="inventoryNuyen"> <span class="Q">Nuyen:</span><span class="A">-</span> </span>
           </p>
           <p>
-            <span id="inventoryKarmaTotal">
-              <span class="Q">Karma Total:</span><span class="A">-</span>
-            </span>
-            <span id="inventoryKarma">
-              <span class="Q">Karma:</span><span class="A">-</span>
-            </span>
+            <span id="inventoryKarmaTotal"> <span class="Q">Karma Total:</span><span class="A">-</span> </span>
+            <span id="inventoryKarma"> <span class="Q">Karma:</span><span class="A">-</span> </span>
           </p>
           <br />
           <h3>Magic</h3>
@@ -167,76 +125,38 @@
         <div>
           <h2>ATTRIBUTES</h2>
           <p>
-            <span id="attributeBody">
-              <span class="Q">BOD:</span><span class="A">-</span>
-            </span>
-            <span id="attributeAgility">
-              <span class="Q">AGI:</span><span class="A">-</span>
-            </span>
-            <span id="attributeReaction">
-              <span class="Q">REA:</span><span class="A">-</span>
-            </span>
-            <span id="attributeStrength">
-              <span class="Q">STR:</span><span class="A">-</span>
-            </span>
+            <span id="attributeBody"> <span class="Q">BOD:</span><span class="A">-</span> </span>
+            <span id="attributeAgility"> <span class="Q">AGI:</span><span class="A">-</span> </span>
+            <span id="attributeReaction"> <span class="Q">REA:</span><span class="A">-</span> </span>
+            <span id="attributeStrength"> <span class="Q">STR:</span><span class="A">-</span> </span>
           </p>
           <p>
-            <span id="attributeWillpower">
-              <span class="Q">WIL:</span><span class="A">-</span>
-            </span>
-            <span id="attributeLogic">
-              <span class="Q">LOG:</span><span class="A">-</span>
-            </span>
-            <span id="attributeIntuition">
-              <span class="Q">INT:</span><span class="A">-</span>
-            </span>
-            <span id="attributeCharisma">
-              <span class="Q">CHA:</span><span class="A">-</span>
-            </span>
+            <span id="attributeWillpower"> <span class="Q">WIL:</span><span class="A">-</span> </span>
+            <span id="attributeLogic"> <span class="Q">LOG:</span><span class="A">-</span> </span>
+            <span id="attributeIntuition"> <span class="Q">INT:</span><span class="A">-</span> </span>
+            <span id="attributeCharisma"> <span class="Q">CHA:</span><span class="A">-</span> </span>
           </p>
           <p>
-            <span id="attributeMagic">
-              <span class="Q">MAG:</span><span class="A">-</span>
-            </span>
-            <span id="attributeResonance">
-              <span class="Q">RES:</span><span class="A">-</span>
-            </span>
-            <span id="attributeEssense">
-              <span class="Q">ESS:</span><span class="A">-</span>
-            </span>
-            <span id="attributeEdge">
-              <span class="Q">EDG:</span><span class="A">-</span>
-            </span>
+            <span id="attributeMagic"> <span class="Q">MAG:</span><span class="A">-</span> </span>
+            <span id="attributeResonance"> <span class="Q">RES:</span><span class="A">-</span> </span>
+            <span id="attributeEssense"> <span class="Q">ESS:</span><span class="A">-</span> </span>
+            <span id="attributeEdge"> <span class="Q">EDG:</span><span class="A">-</span> </span>
           </p>
           <br />
           <p>
-            <span id="attributeInitiative">
-              <span class="Q">INIT:</span><span class="A">-</span>
-            </span>
-            <span id="attributeMatrixInitiative">
-              <span class="Q">MAT-INIT:</span><span class="A">-</span>
-            </span>
-            <span id="attributeAstralInitiative">
-              <span class="Q">AST-INIT:</span><span class="A">-</span>
-            </span>
+            <span id="attributeInitiative"> <span class="Q">INIT:</span><span class="A">-</span> </span>
+            <span id="attributeMatrixInitiative"> <span class="Q">MAT-INIT:</span><span class="A">-</span> </span>
+            <span id="attributeAstralInitiative"> <span class="Q">AST-INIT:</span><span class="A">-</span> </span>
           </p>
           <br />
           <h3>Limits</h3>
           <p>
-            <span id="attributeLimitPhysical">
-              <span class="Q">Physical:</span><span class="A">-+0d6</span>
-            </span>
-            <span id="attributeLimitMental">
-              <span class="Q">Mental:</span><span class="A">-+0d6</span>
-            </span>
+            <span id="attributeLimitPhysical"> <span class="Q">Physical:</span><span class="A">-+0d6</span> </span>
+            <span id="attributeLimitMental"> <span class="Q">Mental:</span><span class="A">-+0d6</span> </span>
           </p>
           <p>
-            <span id="attributeLimitSocial">
-              <span class="Q">Social:</span><span class="A">-+0d6</span>
-            </span>
-            <span id="attributeLimitAstral">
-              <span class="Q">Astral:</span><span class="A">-+0d6</span>
-            </span>
+            <span id="attributeLimitSocial"> <span class="Q">Social:</span><span class="A">-+0d6</span> </span>
+            <span id="attributeLimitAstral"> <span class="Q">Astral:</span><span class="A">-+0d6</span> </span>
           </p>
         </div>
 
@@ -261,9 +181,7 @@
         <div>
           <h2>AUGMENTATIONS</h2>
           <ul id="augmentationsList" class="cyberware g_list">
-            <li>
-              <span class="Q">Cyberware(c):</span><span class="A">-</span>
-            </li>
+            <li><span class="Q">Cyberware(c):</span><span class="A">-</span></li>
           </ul>
         </div>
       </section>
@@ -280,29 +198,29 @@
               alt=""
             />
             <p class="allyStats">
-              <span class="allyName">Ally's pseudo</span
-              ><span class="allyLoyalty">4</span><span class="allyConn">6</span>
+              <span class="allyName">Ally's pseudo</span><span class="allyLoyalty">4</span
+              ><span class="allyConn">6</span>
             </p>
           </div>
           <div>
             <img src="data/media/Npc_humanmale_paco.webp" alt="" />
             <p class="allyStats">
-              <span class="allyName">Ally's pseudo</span
-              ><span class="allyLoyalty">4</span><span class="allyConn">6</span>
+              <span class="allyName">Ally's pseudo</span><span class="allyLoyalty">4</span
+              ><span class="allyConn">6</span>
             </p>
           </div>
           <div>
             <img src="data/media/Pc_dwarffemale_04a_visseral.webp" alt="" />
             <p class="allyStats">
-              <span class="allyName">Ally's pseudo</span
-              ><span class="allyLoyalty">4</span><span class="allyConn">6</span>
+              <span class="allyName">Ally's pseudo</span><span class="allyLoyalty">4</span
+              ><span class="allyConn">6</span>
             </p>
           </div>
           <div>
             <img src="data/media/Pc_dwarffemale_04a_visseral.webp" alt="" />
             <p class="allyStats">
-              <span class="allyName">Ally's pseudo</span
-              ><span class="allyLoyalty">4</span><span class="allyConn">6</span>
+              <span class="allyName">Ally's pseudo</span><span class="allyLoyalty">4</span
+              ><span class="allyConn">6</span>
             </p>
           </div>
         </div>
@@ -313,17 +231,12 @@
         class="closePopup"
         src="data/media/close.png"
         onclick="togglePopup('Settings', false)"
-      />
+      /><!-- could be a div but nothing changes tbh -->
       <ul id="popupSettings" data-Title="Settings">
+        <!-- settings module-->
         <li>
           Username
-          <textarea
-            id="uname"
-            rows="1"
-            cols="1"
-            maxlength="20"
-            placeholder="username"
-          ></textarea>
+          <textarea id="uname" rows="1" cols="1" maxlength="20" placeholder="username"></textarea>
         </li>
         <li>
           LLM
@@ -336,11 +249,26 @@
         </li>
       </ul>
       <ul id="popupSettings" data-Title="Load Save">
+        <!-- save files module-->
         <li>
           Username Save 1
           <div class="saveControls">
-            <img src="./data/media/send.png" alt="load save" />
-            <img src="./data/media/close.png" alt="delete save" />
+            <img class="loadGame" src="./data/media/send.png" alt="load save" />
+            <img class="deleteGame" src="./data/media/delete.png" alt="delete save" />
+          </div>
+        </li>
+        <li>
+          Username Save 2
+          <div class="saveControls">
+            <img class="loadGame" src="./data/media/send.png" alt="load save" />
+            <img class="deleteGame" src="./data/media/delete.png" alt="delete save" />
+          </div>
+        </li>
+        <li>
+          Username Save 3
+          <div class="saveControls">
+            <img class="loadGame" src="./data/media/send.png" alt="load save" />
+            <img class="deleteGame" src="./data/media/delete.png" alt="delete save" />
           </div>
         </li>
       </ul>

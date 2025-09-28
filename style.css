@@ -205,9 +205,17 @@ section {
 
     }
     #console > #settings:hover,
-    #popup > .closePopup:hover {
+    #popup > .closePopup:hover,
+    #popup > ul > li  > .saveControls > img:hover,
+    #popup > ul > li  > .saveControls > img:focus,
+    #popup > ul > li  > .saveControls > img:active {
         filter: brightness(0) invert(45%) sepia(46%) saturate(2785%) hue-rotate(1deg) brightness(102%) contrast(106%);
         transition: 500ms;
+    }
+    #popup > ul > li  > .saveControls > .loadGame:hover,
+    #popup > ul > li  > .saveControls > .loadGame:focus,
+    #popup > ul > li  > .saveControls > .loadGame:active {
+        filter: brightness(0) invert(60%) sepia(30%) saturate(6099%) hue-rotate(161deg) brightness(107%) contrast(104%);
     }
 
     #console > #transcript, #console > #mainMenu {
@@ -514,7 +522,7 @@ section {
             display: flex;
             justify-content: space-between;
             align-items: end;
-            padding-block: 10px 3px ;
+            padding-block: 10px 3px;
             border-bottom: 1px solid var(--colourText);
         }
             #popup > ul > li > * {
@@ -527,9 +535,9 @@ section {
                 width: 200px;
                 min-height: 16px;
             }
-            #popup > ul > li  > *:hover,
-            #popup > ul > li  > *:focus,
-            #popup > ul > li  > *:active{
+            #popup > ul > li  > *:not(.saveControls):hover,
+            #popup > ul > li  > *:not(.saveControls):focus,
+            #popup > ul > li  > *:not(.saveControls):active{
                 color: var(--colourNeonOrange);
                 border: 1px solid var(--colourNeonOrange);
                 outline: 1px solid var(--colourSecBG);
@@ -541,6 +549,20 @@ section {
             #popup > ul > li > textarea {
                 resize: none;
             }
+            #popupSettings > li > .saveControls {
+                all: unset;
+                display: flex;
+                justify-content: end;
+                gap: 15px;
+            }
+                #popupSettings > li > .saveControls > * {
+                    max-height: 15px;
+                    width: auto;
+                }
+                #popupSettings > li > .saveControls > .deleteGame {
+                    height: 13px;
+                    margin-block: auto;
+                }
 
 
 

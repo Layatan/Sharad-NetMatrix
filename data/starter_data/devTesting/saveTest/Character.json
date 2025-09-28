@@ -1,10 +1,9 @@
 {
   "metadata": {
-    "uuid": "2cb0fdef-0d5f-4a27-80e9-6cb7be99255a",
     "saveName": "save name",
     "dateCreated": 1754687946202,
-    "lastSaved": 1754687946202
-    "interactionCount": 5
+    "lastSaved": 1754687946202,
+    "promptCount": 5
   },
   "character": {
     "name": "First_Names \"Alias\" Surname",
@@ -18,16 +17,6 @@
       "item": "sword",
       "quantity": 1,
       "description": "description blah blah blah"
-    },
-    {
-      "item": "pistol",
-      "quantity": 2,
-      "description": "description blah blah blah"
-    },
-    {
-      "item": "idknuke",
-      "quantity": 1,
-      "description": "ahahaha johnny silverhand approves"
     }
   ],
   "resources": {
@@ -41,31 +30,6 @@
       "item": "Fire Bolt",
       "level": "1",
       "description": "Wizard fire out of your hands blah blah blah"
-    },
-    {
-      "item": "Lightning Bolt",
-      "level": "3",
-      "description": "description blah blah blah"
-    },
-    {
-      "item": "Caustic Splash",
-      "level": "2",
-      "description": "description blah blah blah"
-    },
-    {
-      "item": "Infernus Spirit",
-      "level": "6",
-      "description": "description blah blah blah"
-    },
-    {
-      "item": "City Spirit",
-      "level": "3",
-      "description": "description blah blah blah"
-    },
-    {
-      "item": "Stun Punch",
-      "level": "2",
-      "description": "description blah blah blah"
     }
   ],
   "attributes": {
@@ -96,25 +60,11 @@
       "item": "physical skill 1",
       "level": 1,
       "description": "description blah blah blah"
-    },
-    {
-      "item": "physical skill 2",
-      "level": 1,
-      "description": "description blah blah blah"
-    },
-    {
-      "item": "mental skill 1",
-      "level": 1,
-      "description": "description blah blah blah"
     }
   ],
   "qualitiesPositive": [
     {
       "item": "qual1",
-      "description": "description blah blah"
-    },
-    {
-      "item": "qual2",
       "description": "description blah blah"
     }
   ],
@@ -122,25 +72,11 @@
     {
       "item": "qual1",
       "description": "description blah blah"
-    },
-    {
-      "item": "qual2",
-      "description": "description blah blah"
     }
   ],
   "augmentations": [
     {
       "item": "cyberware 1",
-      "level": 1,
-      "description": "description blah blah blah"
-    },
-    {
-      "item": "cyberware 2",
-      "level": 1,
-      "description": "description blah blah blah"
-    },
-    {
-      "item": "bioware 1",
       "level": 1,
       "description": "description blah blah blah"
     }
@@ -150,34 +86,6 @@
       "name": "Player",
       "description": "description blah blah blah",
       "image": "0.jpg"
-    },
-    {
-      "name": "Hecker",
-      "description": "description blah blah blah",
-      "loyalty": 1,
-      "connection": 2,
-      "image": "1.webp"
-    },
-    {
-      "name": "Paco",
-      "description": "description blah blah blah",
-      "loyalty": 3,
-      "connection": 4,
-      "image": "2.webp"
-    },
-    {
-      "name": "McKlunksky",
-      "description": "description blah blah blah",
-      "loyalty": 5,
-      "connection": 6,
-      "image": "3.webp"
-    },
-    {
-      "name": "Cute One",
-      "description": "description blah blah blah",
-      "loyalty": 7,
-      "connection": 8,
-      "image": "4.webp"
     }
   ]
 }
