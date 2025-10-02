@@ -61,19 +61,6 @@ async function newSave(characterJSON, historyJSON,  imageFiles) {
     await tx.complete;
 }
   
-
-async function loadSave(saveID) {
-    const db = await openDB();
-    const tx = db.transaction(saveFiles, "readonly");
-    const store = tx.objectStore(saveFiles);
-    const request = store.get(saveID);
-  
-    return new Promise((resolve, reject) => {
-        request.onsuccess = () => resolve(request.result);
-        request.onerror = () => reject(request.error);
-    });
-}
-
 async function getAllSaves() {
     const db = await openDB();
     const tx = db.transaction(saveFiles, "readonly");
@@ -85,7 +72,18 @@ async function getAllSaves() {
         request.onerror = () => reject(request.error);
     });
 }
+
+async function loadSave(saveID) {
+    const db = await openDB();
+    const tx = db.transaction(saveFiles, "readonly");
+    const store = tx.objectStore(saveFiles);
+    const request = store.get(saveID);
   
+    return new Promise((resolve, reject) => {
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+    });
+} 
 
 async function dbg_clearSaveStore() { //debug only - 
     const db = await openDB();
@@ -101,4 +99,4 @@ async function dbg_clearSaveStore() { //debug only -
   
     await tx.done;
     console.log("SaveFiles store cleared.");
-  }
+}

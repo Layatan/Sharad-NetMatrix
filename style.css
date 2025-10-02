@@ -549,21 +549,61 @@ section {
             #popup > ul > li > textarea {
                 resize: none;
             }
-            #popupSettings > li > .saveControls {
+            #popupSaves > li > .saveControls {
                 all: unset;
                 display: flex;
                 justify-content: end;
                 gap: 15px;
             }
-                #popupSettings > li > .saveControls > * {
+                #popupSaves > li > .saveControls > * {
                     max-height: 15px;
                     width: auto;
                 }
-                #popupSettings > li > .saveControls > .deleteGame {
+                #popupSaves > li > .saveControls > .deleteGame {
                     height: 13px;
                     margin-block: auto;
                 }
+            #popupSaves > li > #loadFile {
+                all: unset;
+                content: 'wasss';
+                position: absolute;
+                width: 100%;
+                height: calc(100% - var(--popupWindow));
+                top: var(--popupWindow);
+                left: 0;
 
+                opacity: 0;
+                pointer-events: none;
+            }
+                #popupSaves > li > #loadFile::before {
+                    content: "DRAG HERE";
+                    position: absolute;
+                    inset: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    font-family: 'Turret Road';
+                    font-weight: bold;
+                    color: var(--colourNeonOrange);
+                    text-shadow: 0 0 10px var(--colourNeonOrange);
+
+                    background-color: var(--colourSecBG);
+                    background-image: url(./data/media/insertSaveBG_spaced.webp);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                }
+            #popupSaves > li > #lbl_loadFile {
+                text-align: end;
+            }
+
+.dragging-file {
+    opacity: 100 !important;
+    pointer-events: all !important;
+}
 
 
 @keyframes blink {

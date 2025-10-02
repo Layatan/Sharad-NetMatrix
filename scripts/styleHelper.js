@@ -159,7 +159,7 @@ unameTextBox.addEventListener("keypress", function (event) {
 });
 
 
-
+// section - time timing clock
 const currHour = document.getElementById('hour');
 const currMin = document.getElementById('minute');
 const currSec = document.getElementById('second');
@@ -172,3 +172,30 @@ function updateTime() {
 }
 setInterval(updateTime, 1000);
 updateTime();
+
+// section - drag and drop (element that can accept drag and drop pop all the way up)
+const dragDetect = document.getElementsByClassName("dragDetect");
+let dragCounter = 0;
+window.addEventListener('dragenter', () => {
+    dragCounter++;
+    for (const e of dragDetect) {
+        e.classList.add('dragging-file');
+    }
+});
+
+window.addEventListener('dragleave', () => {
+    dragCounter--;
+    if (dragCounter === 0) {
+        for (const e of dragDetect) {
+            e.classList.remove('dragging-file');
+        }
+    }
+});
+
+window.addEventListener('drop', () => {
+    dragCounter = 0;
+    for (const e of dragDetect) {
+        e.classList.remove('dragging-file');
+    }
+});
+  
