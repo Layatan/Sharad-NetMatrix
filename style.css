@@ -563,7 +563,7 @@ section {
                     height: 13px;
                     margin-block: auto;
                 }
-            #popupSaves > li > #loadFile {
+            #popupSaves > li > #loadSaveFile {
                 all: unset;
                 content: 'wasss';
                 position: absolute;
@@ -575,7 +575,7 @@ section {
                 opacity: 0;
                 pointer-events: none;
             }
-                #popupSaves > li > #loadFile::before {
+                #popupSaves > li > #loadSaveFile::before {
                     content: "DRAG HERE";
                     position: absolute;
                     inset: 0;
@@ -596,7 +596,7 @@ section {
                     background-position: center;
                     background-size: contain;
                 }
-            #popupSaves > li > #lbl_loadFile {
+            #popupSaves > li > #lbl_loadSaveFile {
                 text-align: end;
             }
 
@@ -642,5 +642,10 @@ section {
     }
     #console > #settings {
         width: 25px;
+    }
+}
+@media (max-width: 750px) { /* mobile and tablet support coming soon... no local llm suport tho, maybe an LAN one perhaps */
+    body {
+        grid-template-columns: 100% 0px;
     }
 }

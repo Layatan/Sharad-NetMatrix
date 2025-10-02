@@ -1,6 +1,6 @@
 console.log("!saveLoader.js loaded!");
 // const getSave = document.getElementById("getSave");
-const input = document.getElementById("loadFile");
+const input = document.getElementById("loadSaveFile");
 // const fileFeedback = getSave.querySelector("h2"); // HEY DUMBASS REUSE THIS for the label
 // const loadFeedback = getSave.querySelector("ul");
 
@@ -11,7 +11,7 @@ input.addEventListener('change', () => {
     const file = input.files[0]; //
     console.log("User input file: " + file.name)
 
-    loadFeedback.innerHTML = "<li>check console for verbose loading progress</li>";
+    // loadFeedback.innerHTML = "<li>check console for verbose loading progress</li>";
 
     if (!file) return;
     if (file.name.toLowerCase().endsWith('.zip') == false) {
@@ -78,23 +78,23 @@ async function validateSaveFile(file){
         const newEntry = document.createElement("li");
         newEntry.style.color = "green";
         newEntry.innerText = "Valid Character.json found - loading character."
-        loadFeedback.appendChild(newEntry);
+        // loadFeedback.appendChild(newEntry);
     }
     else {
         // fileFeedback.innerText = "CAN'T LOAD SAVE!!! Character.json not found.";
         // fileFeedback.style.color = "red";
     }
     if (hasHistory) {
-        loadHistory(historyParsed);
+        // loadHistory(historyParsed);
         const newEntry = document.createElement("li");
         newEntry.style.color = "green";
         newEntry.innerText = "Valid History.json found - loading game history."
-        loadFeedback.appendChild(newEntry);
+        // loadFeedback.appendChild(newEntry);
     }
     else {
         const newEntry = document.createElement("li");
         newEntry.style.color = "red";
         newEntry.innerText = "History.json not found! starting new story with character."
-        loadFeedback.appendChild(newEntry);
+        // loadFeedback.appendChild(newEntry);
     }
 }
