@@ -1,11 +1,11 @@
 console.log("!saveLoader.js loaded!");
-const getSave = document.getElementById("getSave");
-const input = document.getElementById("getSaveFile");
-const fileFeedback = getSave.querySelector("h2");
-const loadFeedback = getSave.querySelector("ul");
+// const getSave = document.getElementById("getSave");
+const input = document.getElementById("loadFile");
+// const fileFeedback = getSave.querySelector("h2"); // HEY DUMBASS REUSE THIS for the label
+// const loadFeedback = getSave.querySelector("ul");
 
 // let characterJSON; //permanent RAM kept freq updated global
-// let historyJSON; //permanent RAM kept freq updated global
+// let historyJSON; //permanent RAM kept freq updated global - WTF was i talking about
 
 input.addEventListener('change', () => {
     const file = input.files[0]; //
@@ -15,13 +15,13 @@ input.addEventListener('change', () => {
 
     if (!file) return;
     if (file.name.toLowerCase().endsWith('.zip') == false) {
-      fileFeedback.innerText = "This ain't a zip file bruh >:|";
-      fileFeedback.style.color = "red";
+    //   fileFeedback.innerText = "This ain't a zip file bruh >:|";
+    //   fileFeedback.style.color = "red";
       return;
     }
     else {
-      fileFeedback.innerText = `Loading... ${file.name}`;
-      fileFeedback.removeAttribute("style");
+    //   fileFeedback.innerText = `Loading... ${file.name}`;
+    //   fileFeedback.removeAttribute("style");
     }
 
     validateSaveFile(file);
@@ -52,8 +52,8 @@ async function validateSaveFile(file){
                 characterParsed = JSON.parse(charData);
             } catch (err) {
                 console.error("Invalid Character.json:", err);
-                fileFeedback.innerText = "CAN'T LOAD SAVE!!! Character.json is invalid.";
-                fileFeedback.style.color = "red";
+                // fileFeedback.innerText = "CAN'T LOAD SAVE!!! Character.json is invalid.";
+                // fileFeedback.style.color = "red";
             }
         }
 
@@ -81,8 +81,8 @@ async function validateSaveFile(file){
         loadFeedback.appendChild(newEntry);
     }
     else {
-        fileFeedback.innerText = "CAN'T LOAD SAVE!!! Character.json not found.";
-        fileFeedback.style.color = "red";
+        // fileFeedback.innerText = "CAN'T LOAD SAVE!!! Character.json not found.";
+        // fileFeedback.style.color = "red";
     }
     if (hasHistory) {
         loadHistory(historyParsed);
