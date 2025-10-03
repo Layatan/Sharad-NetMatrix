@@ -199,3 +199,57 @@ window.addEventListener('drop', () => {
     }
 });
   
+
+// section - toast surprise (last minute addition for user feedback) 'good', 'info', 'warn', 'bad' | 'unpin', 'pin', 'close'
+
+const toastDeck = document.getElementById("toast");
+let toastTimeout;
+let toastPin = false;
+
+function toast(message, type = 'info', timeout = 3000) {
+    toastDeck.style.setProperty("display", "flex"); //default is flex sooo
+    const toastEntry = document.createElement('span');
+    
+    switch (type) {
+        case 'pin':
+            toastPin = !toastPin;
+            if (toastPin == true) {
+                clearTimeout(toastTimeout)
+                document.getElementById("pinToast").classList.add("filterBlue");
+                message = "Toast Pinned!";
+                // return;
+            }
+            else {
+                document.getElementById("pinToast").classList.remove("filterBlue");
+                message = "Toast Unpinned!";
+            }
+            break;
+        case 'close':
+            toastPin = false;
+            timeout = 0;
+            break;
+        case 'good':
+            toastEntry.style.color = "var(--colourNeonGreen)";
+            break;
+        case 'warn':
+            toastEntry.style.color = "var(--colourNeonOrange)";
+            break;
+        case 'bad':
+            toastEntry.style.color = "var(--colourNeonRed)";
+            break;
+    }
+    toastEntry.innerText = message;
+    if (message != "") toastDeck.append(toastEntry);
+
+    if (toastPin == false) updateToastTimeout(timeout);
+}
+
+function updateToastTimeout(timeout) {
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => { toastDeck.querySelectorAll('span').forEach(e => e.remove()); 
+        toastDeck.style.setProperty("display", "none");
+        if (!toastPin) {
+            document.getElementById("pinToast").classList.remove("filterBlue");
+        }
+     }, timeout);
+}

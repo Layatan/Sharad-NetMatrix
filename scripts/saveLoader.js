@@ -1,6 +1,7 @@
 console.log("!saveLoader.js loaded!");
-// const getSave = document.getElementById("getSave");
 const input = document.getElementById("loadSaveFile");
+const inputFeedback = document.getElementById("lbl_loadSaveFile");
+// const getSave = document.getElementById("getSave");
 // const fileFeedback = getSave.querySelector("h2"); // HEY DUMBASS REUSE THIS for the label
 // const loadFeedback = getSave.querySelector("ul");
 
@@ -11,7 +12,7 @@ input.addEventListener('change', () => {
     const file = input.files[0]; //
     console.log("User input file: " + file.name)
 
-    // loadFeedback.innerHTML = "<li>check console for verbose loading progress</li>";
+    inputFeedback.innerText = "Loading... (console logging)";
 
     if (!file) return;
     if (file.name.toLowerCase().endsWith('.zip') == false) {

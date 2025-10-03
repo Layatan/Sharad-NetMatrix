@@ -208,7 +208,10 @@ section {
     #popup > .closePopup:hover,
     #popup > ul > li  > .saveControls > img:hover,
     #popup > ul > li  > .saveControls > img:focus,
-    #popup > ul > li  > .saveControls > img:active {
+    #popup > ul > li  > .saveControls > img:active,
+    #toast > #toastControls > #closeToast:hover,
+    #toast > #toastControls > #closeToast:focus,
+    #toast > #toastControls > #closeToast:active {
         filter: brightness(0) invert(45%) sepia(46%) saturate(2785%) hue-rotate(1deg) brightness(102%) contrast(106%);
         transition: 500ms;
     }
@@ -598,7 +601,39 @@ section {
                 }
             #popupSaves > li > #lbl_loadSaveFile {
                 text-align: end;
+                max-height: 20px;
             }
+#toast {
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+    position: fixed;
+    top: calc(var(--panelGaps) + 5px);
+    right: var(--panelGaps);
+
+    border: 2px solid var(--colourBG);
+    background: var(--colourSecBG);
+    height: fit-content;
+    min-width: 15vw;
+    max-width: 25vw;
+    padding: var(--panelGaps);
+    box-shadow: -3px 3px 10px var(--colourBG);
+    z-index: 1000;
+}
+    #toast > #toastControls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 3px;
+        border: inherit;
+        background: inherit;
+        position: absolute;
+        right: 5px;
+        top: -12px;
+    }
+        #toast > #toastControls > img {
+            width: 15px;
+        }
 
 .dragging-file {
     opacity: 100 !important;
